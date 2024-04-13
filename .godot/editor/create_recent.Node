@@ -1,12 +1,12 @@
-RichTextLabel
 Panel
+PanelContainer
+RichTextLabel
 VFlowContainer
 Button
 Control
 Node
 GridContainer
 Node2D
-PanelContainer
 TextureButton
 Timer
 Label

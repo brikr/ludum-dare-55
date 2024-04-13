@@ -88,7 +88,7 @@ custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 text = "Orc"
 
-[node name="Lesser Demon" type="Button" parent="SummonButtons"]
+[node name="Demon Brute" type="Button" parent="SummonButtons"]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 text = "Lesser Demon"
@@ -162,17 +162,20 @@ layout_mode = 2
 text = "Forbidden Library"
 
 [node name="Tooltip" type="Panel" parent="."]
+visible = false
 offset_left = 10.0
-offset_top = 410.0
-offset_right = 370.0
-offset_bottom = 690.0
+offset_top = 340.0
+offset_right = 360.0
+offset_bottom = 690.001
+size_flags_vertical = 3
 
 [node name="TooltipContent" type="RichTextLabel" parent="Tooltip"]
-layout_mode = 0
+clip_contents = false
+layout_mode = 2
 offset_left = 10.0
 offset_top = 10.0
-offset_right = 350.0
-offset_bottom = 270.0
+offset_right = 340.0
+offset_bottom = 340.0
 bbcode_enabled = true
 text = "[b]Imp[/b]
 50 Mana
