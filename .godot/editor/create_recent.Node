@@ -1,5 +1,7 @@
-Button
+RichTextLabel
+Panel
 VFlowContainer
+Button
 Control
 Node
 GridContainer

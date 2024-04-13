@@ -12,6 +12,9 @@ var arsenal := {
   "hellcat": 2
 }
 
+var current_night := 1
+var time_until_night := 180
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -35,6 +38,12 @@ func tick():
       for resource in Constants.BASE_GEN[entity]:
         arsenal[resource] += Constants.BASE_GEN[entity][resource] * arsenal[entity]
 
+  # Subtract time
+  time_until_night -= 1
+  # Maybe go to day
+  if time_until_night <= 0:
+    pass
+
 
 func summon(entity: String):
   if !arsenal.has(entity):
@@ -50,6 +59,10 @@ func summon(entity: String):
   # Give the new lad
   arsenal[entity] += 1
   print(arsenal)
+
+
+func construct_building(building: String):
+  pass
 
 
 func get_count(entity: String) -> int:
