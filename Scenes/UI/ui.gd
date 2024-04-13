@@ -54,8 +54,8 @@ func update_labels():
   $Info/NightCounter.text = NIGHT_STRING % GameState.current_night
   $Info/AttackSize.text = ATTACK_SIZE_STRING % ["Attack Size", Constants.ATTACK_SIZES[GameState.current_night]]
 
-  var minutes := floori(GameState.time_until_night / 60)
-  var seconds := floori(GameState.time_until_night % 60)
+  var minutes := floori(GameState.time_until_day / 60)
+  var seconds := floori(GameState.time_until_day % 60)
   $Info/NightTimer.text = TIMER_STRING % [minutes, seconds]
 
 
@@ -102,33 +102,37 @@ func format_building(building: String) -> String:
 
 
 func update_tooltip_text():
-  var cost := {}
-  if Constants.SUMMON_COSTS.has(hovered_entity):
-    cost = Constants.SUMMON_COSTS[hovered_entity]
-  else:
-    cost = Constants.BUILDING_COSTS[hovered_entity]
+  var name_string = "[b]%s[/b]" % hovered_entity.capitalize()
 
-  var cost_string := "\n"
+  var cost = GameState.get_cost(hovered_entity)
+
+  var cost_lines := [name_string]
   for requirement in cost:
-    var cost_line = "%d %s\n" % [cost[requirement], requirement.capitalize()]
+    var cost_line = "%d %s" % [cost[requirement], requirement.capitalize()]
     if GameState.get_count(requirement) < cost[requirement]:
       cost_line = "[color=red]%s[/color]" % cost_line
-    cost_string += cost_line
+    cost_lines.append(cost_line)
+  var cost_string = "\n".join(cost_lines)
 
   var power_string := ""
   if Constants.BASE_DEMON_POWER.has(hovered_entity):
-    power_string = "\nBase Power: %d" % Constants.BASE_DEMON_POWER[hovered_entity]
+    power_string = "Base Power: %d" % Constants.BASE_DEMON_POWER[hovered_entity]
 
   var gen := {}
   if Constants.BASE_GEN.has(hovered_entity):
     gen = Constants.BASE_GEN[hovered_entity]
 
-  var gen_string := "\n"
+  var gen_lines := []
   for resource in gen:
-    var gen_line = "%+d %s / sec\n" % [gen[resource], resource.capitalize()]
-    gen_string += gen_line
+    var gen_line = "%+d %s / sec" % [gen[resource], resource.capitalize()]
+    gen_lines.append(gen_line)
+  var gen_string = "\n".join(gen_lines)
 
-  var tooltip_text = "[b]%s[/b]%s%s%s\n%s" % [hovered_entity.capitalize(), cost_string, power_string, gen_string, Constants.TOOLTIP_DESCRIPTIONS[hovered_entity]]
+  var tooltip_text = "\n\n".join(
+    [cost_string, power_string, gen_string, Constants.TOOLTIP_DESCRIPTIONS[hovered_entity]]
+        .filter(func (str): return !str.is_empty())
+  )
+
   $Tooltip/TooltipContent.text = tooltip_text
 
 

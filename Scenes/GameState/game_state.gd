@@ -7,13 +7,18 @@ extends Node
 var arsenal := {
   "mana": 0,
   "gems": 0,
+  # including these here so apprentice/disciple code doesn't have to default them to zero
+  "imp": 0,
+  "kobold": 0,
+  "hellhound": 0,
 
   # DEBUG
-  #"hellcat": 2
+  #"disciple": 1,
+  #"dark library": 1
 }
 
 var current_night := 1
-var time_until_night := 180
+var time_until_day := 180
 
 
 # Called when the node enters the scene tree for the first time.
@@ -39,10 +44,21 @@ func tick():
         arsenal[resource] += Constants.BASE_GEN[entity][resource] * arsenal[entity]
 
   # Subtract time
-  time_until_night -= 1
+  time_until_day -= 1
   # Maybe go to day
-  if time_until_night <= 0:
+  if time_until_day <= 0:
     pass
+
+  # Handle apprentices / disciples
+  if time_until_day % 10 == 0:
+    var apprentice_count = get_count("apprentice")
+    var disciple_count = get_count("disciple")
+    var mult = 1 + get_count("dark library")
+
+    arsenal["imp"] += apprentice_count * mult
+    arsenal["imp"] += disciple_count * mult
+    arsenal["kobold"] += disciple_count * mult
+    arsenal["hellhound"] += disciple_count * mult
 
 
 func summon(entity: String):
@@ -53,14 +69,16 @@ func summon(entity: String):
     return
 
   # Pay for entity
-  for requirement in Constants.SUMMON_COSTS[entity]:
-    arsenal[requirement] -= Constants.SUMMON_COSTS[entity][requirement]
+  var cost = get_cost(entity)
+  for requirement in cost:
+    arsenal[requirement] -= cost[requirement]
 
   # Give the new lad
   arsenal[entity] += 1
   print(arsenal)
 
 
+# TODO: this is same as summon except for checking caps. could probably combine
 func construct_building(building: String):
   if !arsenal.has(building):
     arsenal[building] = 0
@@ -72,8 +90,9 @@ func construct_building(building: String):
     return
 
   # Pay for building
-  for requirement in Constants.BUILDING_COSTS[building]:
-    arsenal[requirement] -= Constants.BUILDING_COSTS[building][requirement]
+  var cost = get_cost(building)
+  for requirement in cost:
+    arsenal[requirement] -= cost[requirement]
 
   # Give the build
   arsenal[building] += 1
@@ -87,14 +106,29 @@ func get_count(entity: String) -> int:
     return 0
 
 
-func can_afford(entity: String) -> bool:
+# Gets the cost of a creature or building, accounting for reductions
+func get_cost(entity: String) -> Dictionary:
   var cost := {}
   if Constants.SUMMON_COSTS.has(entity):
-    cost = Constants.SUMMON_COSTS[entity]
+    cost = Constants.SUMMON_COSTS[entity].duplicate()
   elif Constants.BUILDING_COSTS.has(entity):
-    cost = Constants.BUILDING_COSTS[entity]
+    cost = Constants.BUILDING_COSTS[entity].duplicate()
   else:
-    return true
+    return {}
+
+  # Soul conduit reductions
+  var soul_conduit_count = get_count("soul conduit")
+  var soul_conduit_reduction = 0.1 * soul_conduit_count
+  var soul_conduit_mult = 1 - soul_conduit_reduction
+
+  if cost.has("gems"):
+    cost["gems"] *= soul_conduit_mult
+
+  return cost
+
+
+func can_afford(entity: String) -> bool:
+  var cost = get_cost(entity)
 
   for requirement in cost:
     if !arsenal.has(requirement) || arsenal[requirement] < cost[requirement]:
@@ -109,6 +143,11 @@ func get_demon_power() -> int:
   for entity in arsenal:
     if Constants.BASE_DEMON_POWER.has(entity):
       demon_power += Constants.BASE_DEMON_POWER[entity] * arsenal[entity]
+
+  # Pit Lords
+  var supply = get_supply()
+  var pit_lord_count = get_count("pit lord")
+  demon_power += supply * pit_lord_count
 
   return demon_power
 
