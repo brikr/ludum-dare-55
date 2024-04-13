@@ -28,22 +28,12 @@ offset_right = 103.0
 offset_bottom = 84.0
 text = "Gems: 0"
 
-[node name="SummonButtons" type="Node2D" parent="."]
-position = Vector2(300, 700)
-
-[node name="Imp" type="Button" parent="SummonButtons"]
+[node name="DemonPower" type="Label" parent="Resources"]
 offset_left = 10.0
-offset_top = 10.0
-offset_right = 210.0
-offset_bottom = 60.0
-text = "Imp"
-
-[node name="Hellcat" type="Button" parent="SummonButtons"]
-offset_left = 10.0
-offset_top = 70.0
-offset_right = 210.0
-offset_bottom = 120.0
-text = "Hellcat"
+offset_top = 90.0
+offset_right = 237.0
+offset_bottom = 124.0
+text = "Demon Power: 0"
 
 [node name="Info" type="Node2D" parent="."]
 position = Vector2(1300, 700)
@@ -51,16 +41,129 @@ position = Vector2(1300, 700)
 [node name="NightTimer" type="Label" parent="Info"]
 offset_left = 10.0
 offset_top = 10.0
-offset_right = 102.0
+offset_right = 237.0
 offset_bottom = 44.0
 text = "Time until day: 3:00"
 
-[node name="DemonPower" type="Label" parent="Info"]
-offset_left = 10.0
-offset_top = 50.0
-offset_right = 237.0
-offset_bottom = 84.0
-text = "Demon Power: 0"
+[node name="SummonButtons" type="VFlowContainer" parent="."]
+offset_left = 270.0
+offset_top = 710.0
+offset_right = 1082.0
+offset_bottom = 890.0
+
+[node name="Imp" type="Button" parent="SummonButtons"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "Imp"
+
+[node name="Hellcat" type="Button" parent="SummonButtons"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "Hellcat"
+
+[node name="Kobold" type="Button" parent="SummonButtons"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "Kobold"
+
+[node name="Hellhound" type="Button" parent="SummonButtons"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "Hellhound"
+
+[node name="Dwarf Soul" type="Button" parent="SummonButtons"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "Dwarf Soul"
+
+[node name="Orc" type="Button" parent="SummonButtons"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "Orc"
+
+[node name="Lesser Demon" type="Button" parent="SummonButtons"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "Lesser Demon"
+
+[node name="Spacer1" type="Control" parent="SummonButtons"]
+custom_minimum_size = Vector2(200, 36)
+layout_mode = 2
+
+[node name="Apprentice" type="Button" parent="SummonButtons"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "Apprentice"
+
+[node name="Abomination" type="Button" parent="SummonButtons"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "Abomination"
+
+[node name="Black Knight" type="Button" parent="SummonButtons"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "Black Knight"
+
+[node name="Spacer2" type="Control" parent="SummonButtons"]
+custom_minimum_size = Vector2(200, 36)
+layout_mode = 2
+
+[node name="Disciple" type="Button" parent="SummonButtons"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "Disciple"
+
+[node name="Pit Lord" type="Button" parent="SummonButtons"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "Pit Lord"
+
+[node name="Balrog" type="Button" parent="SummonButtons"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "Balrog"
+
+[node name="BuildingButtons" type="VFlowContainer" parent="."]
+offset_left = 1100.0
+offset_top = 710.0
+offset_right = 1300.0
+offset_bottom = 903.0
+
+[node name="Rift Portal" type="Button" parent="BuildingButtons"]
+custom_minimum_size = Vector2(175, 0)
+layout_mode = 2
+text = "Rift Portal"
+
+[node name="Spacer3" type="Control" parent="BuildingButtons"]
+custom_minimum_size = Vector2(200, 20)
+layout_mode = 2
+
+[node name="Shadow Well" type="Button" parent="BuildingButtons"]
+custom_minimum_size = Vector2(175, 0)
+layout_mode = 2
+text = "Shadow Well"
+
+[node name="Soul Conduit" type="Button" parent="BuildingButtons"]
+custom_minimum_size = Vector2(175, 0)
+layout_mode = 2
+text = "Soul Conduit"
+
+[node name="Forbidden Library" type="Button" parent="BuildingButtons"]
+custom_minimum_size = Vector2(175, 0)
+layout_mode = 2
+text = "Forbidden Library"
 
 [connection signal="pressed" from="SummonButtons/Imp" to="." method="_on_summon_pressed" binds= ["imp"]]
 [connection signal="pressed" from="SummonButtons/Hellcat" to="." method="_on_summon_pressed" binds= ["hellcat"]]
+[connection signal="pressed" from="SummonButtons/Kobold" to="." method="_on_summon_pressed" binds= ["kobold"]]
+[connection signal="pressed" from="SummonButtons/Hellhound" to="." method="_on_summon_pressed" binds= ["hellhound"]]
+[connection signal="pressed" from="SummonButtons/Dwarf Soul" to="." method="_on_summon_pressed" binds= ["dwarf soul"]]
+[connection signal="pressed" from="SummonButtons/Orc" to="." method="_on_summon_pressed" binds= ["orc"]]
+[connection signal="pressed" from="SummonButtons/Lesser Demon" to="." method="_on_summon_pressed" binds= ["lesser demon"]]
+[connection signal="pressed" from="SummonButtons/Apprentice" to="." method="_on_summon_pressed" binds= ["apprentice"]]
+[connection signal="pressed" from="SummonButtons/Abomination" to="." method="_on_summon_pressed" binds= ["abomination"]]
+[connection signal="pressed" from="SummonButtons/Black Knight" to="." method="_on_summon_pressed" binds= ["black knight"]]
+[connection signal="pressed" from="SummonButtons/Disciple" to="." method="_on_summon_pressed" binds= ["disciple"]]
+[connection signal="pressed" from="SummonButtons/Pit Lord" to="." method="_on_summon_pressed" binds= ["pit lord"]]
+[connection signal="pressed" from="SummonButtons/Balrog" to="." method="_on_summon_pressed" binds= ["balrog"]]

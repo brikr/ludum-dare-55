@@ -18,7 +18,7 @@ func _process(delta):
 
 func update_labels():
   $Resources/Mana.text = format_resource("mana")
-  $Resources/Gems.text = format_resource("gems")
+  $Resources/Gems.text = "Soul Gems: %d" % GameState.get_count("gems")
   $Info/DemonPower.text = RESOURCE_STRING % ["Demon Power", GameState.get_demon_power()]
 
 func update_button_texts():

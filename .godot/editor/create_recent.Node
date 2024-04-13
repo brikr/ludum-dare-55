@@ -1,8 +1,10 @@
-Node2D
-Node
-PanelContainer
-GridContainer
 Button
+VFlowContainer
+Control
+Node
+GridContainer
+Node2D
+PanelContainer
 TextureButton
 Timer
 Label
