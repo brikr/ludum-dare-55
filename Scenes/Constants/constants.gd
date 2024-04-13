@@ -158,6 +158,7 @@ const BASE_DEMON_POWER := {
   "abomination": 5,
   "black knight": 20,
   "disciple": 3,
+  "pit lord": 10,
   "balrog": 50
 }
 
