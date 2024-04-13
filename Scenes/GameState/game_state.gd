@@ -127,3 +127,15 @@ func get_resource_rate(resource: String) -> int:
         delta += Constants.BASE_GEN[entity][resource] * arsenal[entity]
 
   return delta
+
+
+func get_supply() -> int:
+  var count := 0
+  for creature in Constants.SUMMON_COSTS:
+    count += get_count(creature)
+  return count
+
+
+func get_supply_cap() -> int:
+  return get_count("rift portal") * 10 + 10
+

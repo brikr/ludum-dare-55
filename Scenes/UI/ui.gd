@@ -1,6 +1,7 @@
 extends CanvasLayer
 
 const RESOURCE_STRING := "%s: %d (%+d)"
+const SUPPLY_STRING := "Summons: %d/%d"
 const SUMMON_STRING := "%s (%d)"
 const BUILDING_STRING := "%s (%d/%d)"
 const NIGHT_STRING := "Night %d"
@@ -8,8 +9,6 @@ const TIMER_STRING := "Time until night: %d:%02d"
 const ATTACK_SIZE_STRING := "%s: %d"
 
 var hovered_entity := "imp"
-
-signal summon_creature
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -43,6 +42,13 @@ func tick():
 func update_labels():
   $Resources/Mana.text = RESOURCE_STRING % ["Mana", GameState.get_count("mana"), GameState.get_resource_rate("mana")]
   $Resources/Gems.text = RESOURCE_STRING % ["Soul Gems", GameState.get_count("gems"), GameState.get_resource_rate("gems")]
+
+  $Resources/SummonCount.text = SUPPLY_STRING % [GameState.get_supply(), GameState.get_supply_cap()]
+  if GameState.get_supply() == GameState.get_supply_cap():
+    $Resources/SummonCount.set("theme_override_colors/font_color", Color.RED)
+  else:
+    $Resources/SummonCount.set("theme_override_colors/font_color", Color.WHITE)
+
   $Resources/DemonPower.text = ATTACK_SIZE_STRING % ["Demon Power", GameState.get_demon_power()]
 
   $Info/NightCounter.text = NIGHT_STRING % GameState.current_night
@@ -63,8 +69,12 @@ func update_button_texts():
 
 func update_summonable_entities():
   for summon in Constants.SUMMON_COSTS:
-    var affordable := GameState.can_afford(summon)
-    get_node("SummonButtons/%s" % summon.capitalize()).set_disabled(!affordable)
+    var button = get_node("SummonButtons/%s" % summon.capitalize())
+    if GameState.get_supply() == GameState.get_supply_cap():
+      button.set_disabled(true)
+    else:
+      var affordable := GameState.can_afford(summon)
+      button.set_disabled(!affordable)
 
   for building in Constants.BUILDING_COSTS:
     var button = get_node("BuildingButtons/%s" % building.capitalize())
