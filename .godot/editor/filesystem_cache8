@@ -1,17 +1,55 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1713032549
+::res://::1713049633
 icon.svg::CompressedTexture2D::8329556524690112368::1712969251::1712969256::1::::<><>::
-theme.tres::Theme::1916527892957159508::1712992013::0::1::::<><>::
+theme.tres::Theme::1916527892957159508::1713034010::0::1::::<><>::
+::res://addons/::1713049563
+::res://addons/nklbdev.aseprite_importers/::1713049564
+aseprite_image_format_loader_extension.gd::GDScript::-1::1713049563::0::1::::<>ImageFormatLoaderExtension<>::
+common.gd::GDScript::-1::1713049563::0::1::::<>Object<>::
+editor_plugin.gd::GDScript::-1::1713049564::0::1::::<>EditorPlugin<>::
+icon.png::CompressedTexture2D::2503417493381309461::1713049564::1713049564::1::::<><>::
+plugin.cfg::TextFile::-1::1713049564::0::1::::<><>::
+::res://addons/nklbdev.aseprite_importers/editor_import_plugins/::1713049564
+animated_sprite_2d.gd::GDScript::-1::1713049563::0::1::::<><>::
+animated_sprite_3d.gd::GDScript::-1::1713049563::0::1::::<><>::
+sprite_2d.gd::GDScript::-1::1713049563::0::1::::<><>::
+sprite_3d.gd::GDScript::-1::1713049564::0::1::::<><>::
+sprite_frames.gd::GDScript::-1::1713049564::0::1::::<><>::
+texture_rect.gd::GDScript::-1::1713049564::0::1::::<><>::
+_animation_importer_base.gd::GDScript::-1::1713049563::0::1::::<><>::
+_importer_base.gd::GDScript::-1::1713049563::0::1::::<>EditorImportPlugin<>::
+::res://Assets/::1713049644
+abomination.aseprite::CompressedTexture2D::3399426337757981849::1713039179::1713049644::1::::<><>::
+apprentice.aseprite::CompressedTexture2D::7793009966665653431::1713038087::1713049644::1::::<><>::
+background.aseprite::CompressedTexture2D::9087935050093396122::1713049676::1713049677::1::::<><>::
+balrog.aseprite::CompressedTexture2D::3003690897085814163::1713040563::1713049644::1::::<><>::
+black knight.aseprite::CompressedTexture2D::832632963495774666::1713039439::1713049644::1::::<><>::
+crystal1.aseprite::CompressedTexture2D::3854918039823201928::1713049298::1713049644::1::::<><>::
+crystal2.aseprite::CompressedTexture2D::7533195155413108156::1713049305::1713049644::1::::<><>::
+crystal3.aseprite::CompressedTexture2D::6640732635717119490::1713049316::1713049644::1::::<><>::
+crystal4.aseprite::CompressedTexture2D::7369368635875713413::1713049324::1713049644::1::::<><>::
+dark library.aseprite::CompressedTexture2D::8225477868483007099::1713044708::1713049644::1::::<><>::
+demon brute.aseprite::CompressedTexture2D::898494162536747623::1713037710::1713049644::1::::<><>::
+disciple.aseprite::CompressedTexture2D::515402352839999201::1713038270::1713049644::1::::<><>::
+dwarf soul.aseprite::CompressedTexture2D::6185771335902554899::1713036886::1713049644::1::::<><>::
+hellhound.aseprite::CompressedTexture2D::2983630715613909272::1713036037::1713049644::1::::<><>::
+imp.aseprite::CompressedTexture2D::4573082534352748771::1713035672::1713049644::1::::<><>::
+kobold.aseprite::CompressedTexture2D::1356029171524735515::1713036354::1713049644::1::::<><>::
+orc.aseprite::CompressedTexture2D::5402289672085783839::1713037225::1713049644::1::::<><>::
+pit lord.aseprite::CompressedTexture2D::3483338417160430664::1713039983::1713049644::1::::<><>::
+rift portal.aseprite::CompressedTexture2D::1007771175863756941::1713040670::1713049644::1::::<><>::
+shadow well.aseprite::CompressedTexture2D::6138389327227043667::1713040812::1713049644::1::::<><>::
+soul conduit.aseprite::CompressedTexture2D::5796214732834978745::1713041320::1713049644::1::::<><>::
 ::res://Scenes/::1712980684
-::res://Scenes/Constants/::1713003095
-constants.gd::GDScript::-1::1713003095::0::1::::<>Object<>::
-constants.tscn::PackedScene::7379891290153160250::1713003095::0::1::::<><>::res://Scenes/Constants/constants.gd
-::res://Scenes/GameState/::1713003072
-game_state.gd::GDScript::-1::1712999578::0::1::::<>Node<>::
-game_state.tscn::PackedScene::2763045286449941203::1713003072::0::1::::<><>::res://Scenes/GameState/game_state.gd
-::res://Scenes/Main/::1713003072
+::res://Scenes/Constants/::1713045342
+constants.gd::GDScript::-1::1713043922::0::1::::<>Object<>::
+constants.tscn::PackedScene::7379891290153160250::1713045342::0::1::::<><>::res://Scenes/Constants/constants.gd
+::res://Scenes/GameState/::1713045342
+game_state.gd::GDScript::-1::1713042873::0::1::::<>Node<>::
+game_state.tscn::PackedScene::2763045286449941203::1713045342::0::1::::<><>::res://Scenes/GameState/game_state.gd
+::res://Scenes/Main/::1713045342
 main.gd::GDScript::-1::1712995187::0::1::::<>Node<>::
-main.tscn::PackedScene::2868992512765475781::1713003072::0::1::::<><>::res://Scenes/Main/main.gd<>uid://cisb4l6jm1y01::::res://Scenes/UI/ui.tscn
-::res://Scenes/UI/::1713003072
-ui.gd::GDScript::-1::1713000001::0::1::::<>CanvasLayer<>::
-ui.tscn::PackedScene::5371624047151339452::1713003072::0::1::::<><>::res://Scenes/UI/ui.gd
+main.tscn::PackedScene::2868992512765475781::1713045342::0::1::::<><>::res://Scenes/Main/main.gd<>uid://cisb4l6jm1y01::::res://Scenes/UI/ui.tscn
+::res://Scenes/UI/::1713045420
+ui.gd::GDScript::-1::1713043773::0::1::::<>CanvasLayer<>::
+ui.tscn::PackedScene::5371624047151339452::1713045420::0::1::::<><>::res://Scenes/UI/ui.gd

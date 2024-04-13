@@ -79,16 +79,16 @@ const SUMMON_COSTS := {
 
 const BUILDING_COSTS := {
   "rift portal": {
-    "gems": 1000
+    #"gems": 1000
   },
   "shadow well": {
-    "gems": 500
+    #"gems": 500
   },
   "soul conduit": {
-    "gems": 1500
+    #"gems": 1500
   },
   "dark library": {
-    "gems": 2000
+    #"gems": 2000
   }
 }
 
