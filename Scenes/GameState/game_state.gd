@@ -28,7 +28,7 @@ func _process(delta):
 
 func tick():
   # Base mana
-  arsenal["mana"] += 5
+  arsenal["mana"] += Constants.BASE_MANA_REGEN
 
   # Resources from entities
   for entity in arsenal:
@@ -62,7 +62,22 @@ func summon(entity: String):
 
 
 func construct_building(building: String):
-  pass
+  if !arsenal.has(building):
+    arsenal[building] = 0
+
+  if !can_afford(building):
+    return
+
+  if arsenal[building] >= Constants.BUILDING_CAPS[building]:
+    return
+
+  # Pay for building
+  for requirement in Constants.BUILDING_COSTS[building]:
+    arsenal[requirement] -= Constants.BUILDING_COSTS[building][requirement]
+
+  # Give the build
+  arsenal[building] += 1
+  print(arsenal)
 
 
 func get_count(entity: String) -> int:
@@ -73,11 +88,16 @@ func get_count(entity: String) -> int:
 
 
 func can_afford(entity: String) -> bool:
-  if !Constants.SUMMON_COSTS.has(entity):
+  var cost := {}
+  if Constants.SUMMON_COSTS.has(entity):
+    cost = Constants.SUMMON_COSTS[entity]
+  elif Constants.BUILDING_COSTS.has(entity):
+    cost = Constants.BUILDING_COSTS[entity]
+  else:
     return true
 
-  for requirement in Constants.SUMMON_COSTS[entity]:
-    if !arsenal.has(requirement) || arsenal[requirement] < Constants.SUMMON_COSTS[entity][requirement]:
+  for requirement in cost:
+    if !arsenal.has(requirement) || arsenal[requirement] < cost[requirement]:
       return false
 
   return true
@@ -91,3 +111,19 @@ func get_demon_power() -> int:
       demon_power += Constants.BASE_DEMON_POWER[entity] * arsenal[entity]
 
   return demon_power
+
+
+# Returns how much of a resource you get each second based on your current arsenal
+func get_resource_rate(resource: String) -> int:
+  var delta := 0
+  if resource == "mana":
+    delta += Constants.BASE_MANA_REGEN
+
+  for entity in arsenal:
+    # If this entity generates resources
+    if Constants.BASE_GEN.has(entity):
+      # Add each resource it generates per tick * the count we have
+      if Constants.BASE_GEN[entity].has(resource):
+        delta += Constants.BASE_GEN[entity][resource] * arsenal[entity]
+
+  return delta

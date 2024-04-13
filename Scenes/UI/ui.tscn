@@ -25,6 +25,10 @@ text = "Mana: 0"
 layout_mode = 2
 text = "Gems: 0"
 
+[node name="SummonCount" type="Label" parent="Resources"]
+layout_mode = 2
+text = "Summons: 0/10"
+
 [node name="DemonPower" type="Label" parent="Resources"]
 layout_mode = 2
 text = "Demon Power: 0"
@@ -152,13 +156,12 @@ custom_minimum_size = Vector2(175, 0)
 layout_mode = 2
 text = "Soul Conduit"
 
-[node name="Forbidden Library" type="Button" parent="BuildingButtons"]
+[node name="Dark Library" type="Button" parent="BuildingButtons"]
 custom_minimum_size = Vector2(175, 0)
 layout_mode = 2
 text = "Forbidden Library"
 
 [node name="Tooltip" type="Panel" parent="."]
-visible = false
 offset_left = 10.0
 offset_top = 410.0
 offset_right = 370.0
