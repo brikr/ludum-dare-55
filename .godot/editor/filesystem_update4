@@ -6,3 +6,4 @@ res://Scenes/GameState/game_state.tscn
 res://Scenes/Constants/constants.tscn
 res://Scenes/Constants/constants.gd
 res://Scenes/GameState/game_state.gd
+res://Scenes/Main/main.gd

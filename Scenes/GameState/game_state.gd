@@ -9,7 +9,7 @@ var arsenal := {
   "gems": 0,
 
   # DEBUG
-  "hellcat": 2
+  #"hellcat": 2
 }
 
 var current_night := 1

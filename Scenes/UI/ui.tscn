@@ -159,13 +159,19 @@ text = "Forbidden Library"
 
 [node name="Tooltip" type="Panel" parent="."]
 visible = false
-offset_left = 9.0
-offset_top = 541.0
-offset_right = 259.0
-offset_bottom = 691.0
+offset_left = 10.0
+offset_top = 410.0
+offset_right = 370.0
+offset_bottom = 690.0
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Tooltip"]
+[node name="TooltipContent" type="RichTextLabel" parent="Tooltip"]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-text = "hello"
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 350.0
+offset_bottom = 270.0
+bbcode_enabled = true
+text = "[b]Imp[/b]
+50 Mana
+
+Basic worker"

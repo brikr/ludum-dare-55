@@ -6,6 +6,8 @@ const NIGHT_STRING := "Night %d"
 const TIMER_STRING := "Time until night: %d:%02d"
 const ATTACK_SIZE_STRING := "Attack Size: %d"
 
+var hovered_entity := "imp"
+
 signal summon_creature
 
 # Called when the node enters the scene tree for the first time.
@@ -31,6 +33,10 @@ func _process(delta):
   update_labels()
   update_button_texts()
   update_affordable_summons()
+
+
+func tick():
+  update_tooltip_text()
 
 
 func update_labels():
@@ -61,7 +67,25 @@ func format_summon(summon: String) -> String:
   return SUMMON_STRING % [summon.capitalize(), GameState.get_count(summon)]
 
 
+func update_tooltip_text():
+  var cost_string := "\n"
+  var cost := {}
+  if Constants.SUMMON_COSTS.has(hovered_entity):
+    cost = Constants.SUMMON_COSTS[hovered_entity]
+  else:
+    cost = Constants.BUILDING_COSTS[hovered_entity]
+  for requirement in cost:
+    var cost_line = "%d %s\n" % [cost[requirement], requirement.capitalize()]
+    if GameState.get_count(requirement) < cost[requirement]:
+      cost_line = "[color=red]%s[/color]" % cost_line
+    cost_string += cost_line
+  var tooltip_text = "[b]%s[/b]%s\n\n%s" % [hovered_entity.capitalize(), cost_string, Constants.TOOLTIP_DESCRIPTIONS[hovered_entity]]
+  $Tooltip/TooltipContent.text = tooltip_text
+
+
 func _on_button_mouse_entered(entity: String):
+  hovered_entity = entity
+  update_tooltip_text()
   $Tooltip.visible = true
   #print("hovered %s" % entity)
 

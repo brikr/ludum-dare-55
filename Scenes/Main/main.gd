@@ -14,3 +14,4 @@ func _process(delta):
 
 func _on_tick_timer_timeout():
   GameState.tick()
+  $UI.tick()
