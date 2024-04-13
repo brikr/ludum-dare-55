@@ -45,5 +45,22 @@ offset_right = 210.0
 offset_bottom = 120.0
 text = "Hellcat"
 
+[node name="Info" type="Node2D" parent="."]
+position = Vector2(1300, 700)
+
+[node name="NightTimer" type="Label" parent="Info"]
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 102.0
+offset_bottom = 44.0
+text = "Time until day: 3:00"
+
+[node name="DemonPower" type="Label" parent="Info"]
+offset_left = 10.0
+offset_top = 50.0
+offset_right = 237.0
+offset_bottom = 84.0
+text = "Demon Power: 0"
+
 [connection signal="pressed" from="SummonButtons/Imp" to="." method="_on_summon_pressed" binds= ["imp"]]
 [connection signal="pressed" from="SummonButtons/Hellcat" to="." method="_on_summon_pressed" binds= ["hellcat"]]

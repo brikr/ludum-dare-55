@@ -12,20 +12,21 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-  update_resource_counts()
+  update_labels()
   update_button_texts()
   update_affordable_summons()
 
-func update_resource_counts():
+func update_labels():
   $Resources/Mana.text = format_resource("mana")
   $Resources/Gems.text = format_resource("gems")
+  $Info/DemonPower.text = RESOURCE_STRING % ["Demon Power", GameState.get_demon_power()]
 
 func update_button_texts():
-  for summon in GameState.SUMMONS:
+  for summon in Constants.SUMMON_COSTS:
     get_node("SummonButtons/%s" % summon.capitalize()).text = format_summon(summon)
 
 func update_affordable_summons():
-  for summon in GameState.SUMMONS:
+  for summon in Constants.SUMMON_COSTS:
     var affordable := GameState.can_afford(summon)
     get_node("SummonButtons/%s" % summon.capitalize()).set_disabled(!affordable)
 

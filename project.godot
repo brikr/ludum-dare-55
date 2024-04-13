@@ -17,6 +17,7 @@ config/icon="res://icon.svg"
 
 [autoload]
 
+Constants="*res://Scenes/Constants/constants.tscn"
 GameState="*res://Scenes/GameState/game_state.tscn"
 
 [display]
