@@ -63,11 +63,6 @@ custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 text = "Imp"
 
-[node name="Hellcat" type="Button" parent="SummonButtons"]
-custom_minimum_size = Vector2(200, 0)
-layout_mode = 2
-text = "Hellcat"
-
 [node name="Kobold" type="Button" parent="SummonButtons"]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
@@ -77,6 +72,10 @@ text = "Kobold"
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 text = "Hellhound"
+
+[node name="Spacer1" type="Control" parent="SummonButtons"]
+custom_minimum_size = Vector2(200, 36)
+layout_mode = 2
 
 [node name="Dwarf Soul" type="Button" parent="SummonButtons"]
 custom_minimum_size = Vector2(200, 0)
@@ -93,7 +92,7 @@ custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 text = "Lesser Demon"
 
-[node name="Spacer1" type="Control" parent="SummonButtons"]
+[node name="Spacer2" type="Control" parent="SummonButtons"]
 custom_minimum_size = Vector2(200, 36)
 layout_mode = 2
 
@@ -112,7 +111,7 @@ custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 text = "Black Knight"
 
-[node name="Spacer2" type="Control" parent="SummonButtons"]
+[node name="Spacer3" type="Control" parent="SummonButtons"]
 custom_minimum_size = Vector2(200, 36)
 layout_mode = 2
 

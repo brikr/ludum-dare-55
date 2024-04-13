@@ -10,10 +10,6 @@ const SUMMON_COSTS := {
   "imp": {
     "mana": 50
   },
-  "hellcat": {
-    "mana": 50,
-    "gems": 20
-  },
   # Tier 2
   "kobold": {
     "mana": 50,
@@ -22,7 +18,6 @@ const SUMMON_COSTS := {
   "hellhound": {
     "mana": 50,
     "gems": 20,
-    "hellcat": 1
   },
   # Tier 3
   "dwarf soul": {
@@ -105,14 +100,13 @@ const BUILDING_CAPS := {
 }
 
 const TOOLTIP_DESCRIPTIONS := {
-  "imp": "A basic worker. Mines soul gems slowly but doesn't complain about it.",
-  "hellcat": "The weakest of the combat demons.",
+  "imp": "A basic worker. Mines soul gems slowly but doesn't complain about it. Used as a sacrifice for a lot of more powerful summons.",
   "kobold": "A natural miner, but very weak. It won't stand a chance against an attacking adventurer.",
   "hellhound": "A wild, untrained demon. Point it at the enemy and let it loose.",
   "dwarf soul": "A twisted remnant of a once proud dwarven miner, now enslaved by dark magic. The energy from this tormented soul also helps fuel your mana.",
   "orc": "Born from demonic ancestors, the orcs are a versatile race capable of mining resources and defending from attackers.",
   "demon brute": "A large and powerful monstrosity fueled by raw aggression.",
-  "apprentice": "An apprentice summoner that's relatively new to the dark arts. Using their own mana pool, they will summon an Imp and a Hellcat every 10 seconds.",
+  "apprentice": "An apprentice summoner that's relatively new to the dark arts. Using their own mana pool, they will summon an Imp every 10 seconds.",
   "abomination": "A disgusting amalgamation of muscle and bone. It lacks the intelligence and versatility to excel in combat, but its pure strength makes it an excellence miner.",
   "black knight": "A fallen champion in plate armor. One of the best warriors in history, now under control by dark magic.",
   "disciple": "Spend some resources training an apprentice. Once they are a disciple, they will summon Imps, Hellhounds, and Kobolds.",
@@ -149,7 +143,6 @@ const BASE_GEN := {
 
 # Base demon power provided by entities
 const BASE_DEMON_POWER := {
-  "hellcat": 2,
   "hellhound": 5,
   "dwarf soul": 2,
   "orc": 7,
@@ -166,5 +159,6 @@ const BASE_DEMON_POWER := {
 const ATTACK_SIZES = [
   20,
   100,
+  500,
   1000
 ]
