@@ -6,16 +6,16 @@
 script = ExtResource("1_jxhsp")
 
 [node name="Background" type="ColorRect" parent="."]
-offset_top = 700.0
+offset_top = 704.0
 offset_right = 1600.0
 offset_bottom = 900.0
 color = Color(0.164706, 0.164706, 0.164706, 1)
 
 [node name="Resources" type="VFlowContainer" parent="."]
 offset_left = 10.0
-offset_top = 710.0
+offset_top = 714.0
 offset_right = 260.0
-offset_bottom = 900.0
+offset_bottom = 904.0
 
 [node name="Mana" type="Label" parent="Resources"]
 layout_mode = 2
@@ -35,9 +35,9 @@ text = "Demon Power: 0"
 
 [node name="Info" type="VFlowContainer" parent="."]
 offset_left = 1310.0
-offset_top = 710.0
+offset_top = 714.0
 offset_right = 1590.0
-offset_bottom = 900.0
+offset_bottom = 904.0
 
 [node name="NightCounter" type="Label" parent="Info"]
 layout_mode = 2
@@ -54,9 +54,9 @@ text = "Attack Size: 20"
 
 [node name="SummonButtons" type="VFlowContainer" parent="."]
 offset_left = 270.0
-offset_top = 710.0
+offset_top = 714.0
 offset_right = 1082.0
-offset_bottom = 890.0
+offset_bottom = 894.0
 
 [node name="Imp" type="Button" parent="SummonButtons"]
 custom_minimum_size = Vector2(200, 0)
@@ -132,9 +132,9 @@ text = "Balrog"
 
 [node name="BuildingButtons" type="VFlowContainer" parent="."]
 offset_left = 1100.0
-offset_top = 710.0
+offset_top = 714.0
 offset_right = 1300.0
-offset_bottom = 903.0
+offset_bottom = 907.0
 
 [node name="Rift Portal" type="Button" parent="BuildingButtons"]
 custom_minimum_size = Vector2(175, 0)
