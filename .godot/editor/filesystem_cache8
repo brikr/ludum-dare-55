@@ -1,3 +1,14 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1712969256
+::res://::1712976606
 icon.svg::CompressedTexture2D::8329556524690112368::1712969251::1712969256::1::::<><>::
+theme.tres::Theme::1916527892957159508::1712976577::0::1::::<><>::
+::res://Scenes/::1712975731
+::res://Scenes/GameState/::1712976478
+game_state.gd::GDScript::-1::1712975753::0::1::::<>Node<>::
+game_state.tscn::PackedScene::2763045286449941203::1712976478::0::1::::<><>::res://Scenes/GameState/game_state.gd
+::res://Scenes/Main/::1712976478
+main.gd::GDScript::-1::1712976072::0::1::::<>Node<>::
+main.tscn::PackedScene::2868992512765475781::1712976478::0::1::::<><>::res://Scenes/Main/main.gd<>uid://cisb4l6jm1y01::::res://Scenes/UI/ui.tscn
+::res://Scenes/UI/::1712976596
+ui.gd::GDScript::-1::1712976082::0::1::::<>CanvasLayer<>::
+ui.tscn::PackedScene::5371624047151339452::1712976596::0::1::::<><>::res://Scenes/UI/ui.gd<>uid://2km61fhmf2oe::::res://theme.tres

@@ -1,0 +1,7 @@
+res://Scenes/UI/ui.tscn
+res://theme.tres
+res://Scenes/Main/main.tscn
+res://Scenes/GameState/game_state.tscn
+res://Scenes/UI/ui.gd
+res://Scenes/GameState/game_state.gd
+res://Scenes/Main/main.gd
