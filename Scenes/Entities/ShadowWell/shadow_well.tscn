@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://bndnc5saktcrs"]
+
+[ext_resource type="Texture2D" uid="uid://ctpqm07ksh0gl" path="res://Assets/shadow well.aseprite" id="1_t16h8"]
+[ext_resource type="Script" path="res://Scenes/Entities/ShadowWell/shadow_well.gd" id="2_yqs1i"]
+
+[node name="ShadowWell" type="Sprite2D"]
+y_sort_enabled = true
+texture = ExtResource("1_t16h8")
+centered = false
+offset = Vector2(-64, -64)
+script = ExtResource("2_yqs1i")

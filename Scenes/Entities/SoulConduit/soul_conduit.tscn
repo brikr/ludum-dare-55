@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://81q5qo1jpu4k"]
+
+[ext_resource type="Texture2D" uid="uid://coty2se4hv3pt" path="res://Assets/soul conduit.aseprite" id="1_fqmjf"]
+[ext_resource type="Script" path="res://Scenes/Entities/SoulConduit/soul_conduit.gd" id="2_smogi"]
+
+[node name="SoulConduit" type="Sprite2D"]
+y_sort_enabled = true
+texture = ExtResource("1_fqmjf")
+centered = false
+offset = Vector2(-32, -128)
+script = ExtResource("2_smogi")

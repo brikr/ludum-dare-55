@@ -1,3 +1,5 @@
+res://Scenes/Entities/SoulConduit
+res://Scenes/Entities/ShadowWell
 res://Scenes/Entities/RiftPortal
 C:/Users/elkem/Documents/Godot/ludum-dare-55/build
 res://Scenes/Components/CreatureComponent
@@ -18,5 +20,3 @@ res://Scenes/Entities/Imp
 res://Scenes/Entities
 C:/Program Files/Aseprite
 res://Scenes/UI
-res://Scenes/Constants
-res://

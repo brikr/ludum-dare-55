@@ -8,3 +8,7 @@ res://Scenes/Components/CreatureComponent/creature_component.tscn
 res://Scenes/Entities/RiftPortal/rift_portal.tscn
 res://Scenes/Entities/RiftPortal/rift_portal.gd
 res://Scenes/Main/main.gd
+res://Scenes/Entities/ShadowWell/shadow_well.tscn
+res://Scenes/Entities/ShadowWell/shadow_well.gd
+res://Scenes/Entities/SoulConduit/soul_conduit.tscn
+res://Scenes/Entities/SoulConduit/soul_conduit.gd

@@ -4,8 +4,8 @@
 [ext_resource type="PackedScene" uid="uid://cisb4l6jm1y01" path="res://Scenes/UI/ui.tscn" id="2_0ajhu"]
 [ext_resource type="Texture2D" uid="uid://d2qi7ywsin4li" path="res://Assets/background.aseprite" id="3_kqb6q"]
 [ext_resource type="PackedScene" uid="uid://bn7t8ra061qee" path="res://Scenes/Entities/RiftPortal/rift_portal.tscn" id="4_hh608"]
-[ext_resource type="Texture2D" uid="uid://ctpqm07ksh0gl" path="res://Assets/shadow well.aseprite" id="5_l27q6"]
-[ext_resource type="Texture2D" uid="uid://coty2se4hv3pt" path="res://Assets/soul conduit.aseprite" id="6_bblj0"]
+[ext_resource type="PackedScene" uid="uid://bndnc5saktcrs" path="res://Scenes/Entities/ShadowWell/shadow_well.tscn" id="5_t380f"]
+[ext_resource type="PackedScene" uid="uid://81q5qo1jpu4k" path="res://Scenes/Entities/SoulConduit/soul_conduit.tscn" id="6_8oeuk"]
 [ext_resource type="Texture2D" uid="uid://dpgqoica0c1ox" path="res://Assets/dark library.aseprite" id="7_nkwg7"]
 [ext_resource type="PackedScene" uid="uid://dvc153nuqaete" path="res://Scenes/Entities/Crystal/crystal.tscn" id="8_tqy7h"]
 [ext_resource type="AudioStream" uid="uid://bwukal475ah68" path="res://Assets/night_won.wav" id="9_hi24b"]
@@ -73,125 +73,65 @@ position = Vector2(960, 640)
 visible = false
 position = Vector2(256, 128)
 
-[node name="Shadow Well1" type="Sprite2D" parent="Entities"]
+[node name="Shadow Well1" parent="Entities" instance=ExtResource("5_t380f")]
 visible = false
-y_sort_enabled = true
 position = Vector2(416, 640)
-texture = ExtResource("5_l27q6")
-centered = false
-offset = Vector2(-64, -64)
 
-[node name="Shadow Well2" type="Sprite2D" parent="Entities"]
+[node name="Shadow Well2" parent="Entities" instance=ExtResource("5_t380f")]
 visible = false
-y_sort_enabled = true
 position = Vector2(960, 128)
-texture = ExtResource("5_l27q6")
-centered = false
-offset = Vector2(-64, -64)
 
-[node name="Shadow Well3" type="Sprite2D" parent="Entities"]
+[node name="Shadow Well3" parent="Entities" instance=ExtResource("5_t380f")]
 visible = false
-y_sort_enabled = true
 position = Vector2(1088, 640)
-texture = ExtResource("5_l27q6")
-centered = false
-offset = Vector2(-64, -64)
 
-[node name="Shadow Well4" type="Sprite2D" parent="Entities"]
+[node name="Shadow Well4" parent="Entities" instance=ExtResource("5_t380f")]
 visible = false
-y_sort_enabled = true
 position = Vector2(768, 128)
-texture = ExtResource("5_l27q6")
-centered = false
-offset = Vector2(-64, -64)
 
-[node name="Shadow Well5" type="Sprite2D" parent="Entities"]
+[node name="Shadow Well5" parent="Entities" instance=ExtResource("5_t380f")]
 visible = false
-y_sort_enabled = true
 position = Vector2(736, 640)
-texture = ExtResource("5_l27q6")
-centered = false
-offset = Vector2(-64, -64)
 
-[node name="Shadow Well6" type="Sprite2D" parent="Entities"]
+[node name="Shadow Well6" parent="Entities" instance=ExtResource("5_t380f")]
 visible = false
-y_sort_enabled = true
 position = Vector2(736, 576)
-texture = ExtResource("5_l27q6")
-centered = false
-offset = Vector2(-64, -64)
 
-[node name="Shadow Well7" type="Sprite2D" parent="Entities"]
+[node name="Shadow Well7" parent="Entities" instance=ExtResource("5_t380f")]
 visible = false
-y_sort_enabled = true
 position = Vector2(1088, 576)
-texture = ExtResource("5_l27q6")
-centered = false
-offset = Vector2(-64, -64)
 
-[node name="Shadow Well8" type="Sprite2D" parent="Entities"]
+[node name="Shadow Well8" parent="Entities" instance=ExtResource("5_t380f")]
 visible = false
-y_sort_enabled = true
 position = Vector2(960, 192)
-texture = ExtResource("5_l27q6")
-centered = false
-offset = Vector2(-64, -64)
 
-[node name="Shadow Well9" type="Sprite2D" parent="Entities"]
+[node name="Shadow Well9" parent="Entities" instance=ExtResource("5_t380f")]
 visible = false
-y_sort_enabled = true
 position = Vector2(416, 576)
-texture = ExtResource("5_l27q6")
-centered = false
-offset = Vector2(-64, -64)
 
-[node name="Shadow Well10" type="Sprite2D" parent="Entities"]
+[node name="Shadow Well10" parent="Entities" instance=ExtResource("5_t380f")]
 visible = false
-y_sort_enabled = true
 position = Vector2(768, 192)
-texture = ExtResource("5_l27q6")
-centered = false
-offset = Vector2(-64, -64)
 
-[node name="Soul Conduit1" type="Sprite2D" parent="Entities"]
+[node name="Soul Conduit1" parent="Entities" instance=ExtResource("6_8oeuk")]
 visible = false
-y_sort_enabled = true
 position = Vector2(416, 448)
-texture = ExtResource("6_bblj0")
-centered = false
-offset = Vector2(-32, -128)
 
-[node name="Soul Conduit2" type="Sprite2D" parent="Entities"]
+[node name="Soul Conduit2" parent="Entities" instance=ExtResource("6_8oeuk")]
 visible = false
-y_sort_enabled = true
 position = Vector2(736, 448)
-texture = ExtResource("6_bblj0")
-centered = false
-offset = Vector2(-32, -128)
 
-[node name="Soul Conduit3" type="Sprite2D" parent="Entities"]
+[node name="Soul Conduit3" parent="Entities" instance=ExtResource("6_8oeuk")]
 visible = false
-y_sort_enabled = true
 position = Vector2(1088, 448)
-texture = ExtResource("6_bblj0")
-centered = false
-offset = Vector2(-32, -128)
 
-[node name="Soul Conduit4" type="Sprite2D" parent="Entities"]
+[node name="Soul Conduit4" parent="Entities" instance=ExtResource("6_8oeuk")]
 visible = false
-y_sort_enabled = true
 position = Vector2(896, 352)
-texture = ExtResource("6_bblj0")
-centered = false
-offset = Vector2(-32, -128)
 
-[node name="Soul Conduit5" type="Sprite2D" parent="Entities"]
+[node name="Soul Conduit5" parent="Entities" instance=ExtResource("6_8oeuk")]
 visible = false
-y_sort_enabled = true
 position = Vector2(576, 352)
-texture = ExtResource("6_bblj0")
-centered = false
-offset = Vector2(-32, -128)
 
 [node name="Dark Library1" type="Sprite2D" parent="Entities"]
 visible = false
