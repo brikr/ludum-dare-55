@@ -24,7 +24,7 @@ var arsenal := {
 }
 
 var current_night := 1
-var time_until_day := 5
+var time_until_day := 180
 var last_night_results := {
   "survived": true,
   "bonuses": ["apprentice", "black_knight", "gems"]
