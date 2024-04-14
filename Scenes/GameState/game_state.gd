@@ -10,6 +10,7 @@ signal night_ended
 
 # Current resource/entity counts
 var arsenal := {
+  # TODO: remember to set these to zero before submission
   "mana": 1000000,
   "gems": 1000000,
   # including these here so apprentice/disciple code doesn't have to default them to zero

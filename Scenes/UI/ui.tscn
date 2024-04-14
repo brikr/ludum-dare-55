@@ -237,6 +237,46 @@ text = "[font_size=14]Created by Brik for Ludum Dare 55
 Source: https://brik.dev/ludum-dare-55
 [/font_size]"
 
+[node name="Win" type="Panel" parent="."]
+visible = false
+offset_left = 400.0
+offset_top = 102.0
+offset_right = 1200.0
+offset_bottom = 602.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_35tpa")
+
+[node name="WinContent" type="RichTextLabel" parent="Win"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 30.0
+offset_right = 780.0
+offset_bottom = 371.0
+bbcode_enabled = true
+text = "[font_size=30][center]You've won![/center][/font_size]
+
+Congratulations! You survived long enough to amass an unstoppable army. The world as we know it will soon come to an end, and it's all because of you!
+
+Thanks for playing."
+
+[node name="QuitButton" type="Button" parent="Win"]
+layout_mode = 0
+offset_left = 300.0
+offset_top = 371.0
+offset_right = 500.0
+offset_bottom = 421.0
+text = "Quit Game"
+
+[node name="WinFooter" type="RichTextLabel" parent="Win"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 441.0
+offset_right = 780.0
+offset_bottom = 481.0
+bbcode_enabled = true
+text = "[font_size=14]Created by Brik for Ludum Dare 55
+Source: https://brik.dev/ludum-dare-55
+[/font_size]"
+
 [node name="Summary" type="Panel" parent="."]
 visible = false
 offset_left = 400.0
@@ -283,4 +323,5 @@ offset_bottom = 476.0
 text = "Continue"
 
 [connection signal="pressed" from="Intro/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="Win/QuitButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="Summary/SummaryButton" to="." method="_on_summary_button_pressed"]
