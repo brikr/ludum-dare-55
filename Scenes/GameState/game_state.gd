@@ -10,8 +10,8 @@ signal night_ended
 
 # Current resource/entity counts
 var arsenal := {
-  "mana": 0,
-  "gems": 0,
+  "mana": 1000000,
+  "gems": 1000000,
   # including these here so apprentice/disciple code doesn't have to default them to zero
   "imp": 0,
   "kobold": 0,
@@ -76,7 +76,6 @@ func tick():
     var supply = get_supply()
     var available = cap - supply
     for creature in new_creatures:
-      print("available", available, "creature", creature)
       if new_creatures[creature] <= available:
         # fits
         arsenal[creature] += new_creatures[creature]
@@ -119,7 +118,6 @@ func summon(entity: String):
   # Give the new lad
   arsenal[entity] += 1
   summon_count_changed.emit(entity, arsenal[entity])
-  print(arsenal)
 
 
 func sacrifice(creature: String):
@@ -150,7 +148,6 @@ func construct_building(building: String):
   # Give the build
   arsenal[building] += 1
   building_constructed.emit(building, arsenal[building])
-  print(arsenal)
 
 
 func apply_bonus(bonus: String):
@@ -160,7 +157,6 @@ func apply_bonus(bonus: String):
     "time":
       time_until_day += 30
     var creature:
-      print(creature)
       if !arsenal.has(creature):
         arsenal[creature] = 1
       else:

@@ -7,8 +7,6 @@ func _ready():
   GameState.summon_count_changed.connect(_on_summon_count_changed)
   GameState.building_constructed.connect(_on_building_constructed)
 
-  #spawn_crystals()
-
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -57,6 +55,9 @@ func place_creature(creature: String, node: Node2D):
 
   node.set_global_position(Vector2(x, y))
 
+  # tell the creature component this bounding rectangle
+  node.get_node("CreatureComponent").region = Rect2(top_left, bottom_right - top_left)
+
   $Entities.add_child(node)
 
 
@@ -73,7 +74,9 @@ func _on_summon_count_changed(creature: String, count: int):
       node = Preloaded.packed_creatures[creature].instantiate()
       node.set_name("%s%d" % [creature.capitalize(), idx])
       # Special index field to make removal easier
+      node.get_node("CreatureComponent").creature_type = creature
       node.get_node("CreatureComponent").index = idx
+
       place_creature(creature, node)
 
   # Delete every creature node above count
