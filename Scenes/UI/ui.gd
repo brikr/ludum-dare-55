@@ -19,7 +19,8 @@ func _ready():
   for button in $SummonButtons.get_children():
     if button is Button: # (there are some spacers)
       var entity := button.name.to_lower()
-      button.pressed.connect(_on_summon_pressed.bind(entity))
+      #button.pressed.connect(_on_summon_pressed.bind(entity))
+      button.gui_input.connect(_on_summon_gui_input.bind(entity))
       button.mouse_entered.connect(_on_button_mouse_entered.bind(entity))
       button.mouse_exited.connect(_on_button_mouse_exited.bind(entity))
 
@@ -180,6 +181,14 @@ func _on_button_mouse_exited(entity: String):
 func _on_summon_pressed(creature: String):
   if !summary_shown:
     GameState.summon(creature)
+
+
+func _on_summon_gui_input(event: InputEvent, creature: String):
+  if event is InputEventMouseButton && !summary_shown:
+    if Input.is_action_just_released("ui_left_click"):
+      GameState.summon(creature)
+    elif Input.is_action_just_released("ui_right_click"):
+      GameState.sacrifice(creature)
 
 
 func _on_building_pressed(building: String):
