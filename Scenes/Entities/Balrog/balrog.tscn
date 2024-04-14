@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://dpnld6kf6ulk4"]
+
+[ext_resource type="Texture2D" uid="uid://bi2al54pk4qx4" path="res://Assets/balrog.aseprite" id="1_uc0wq"]
+[ext_resource type="PackedScene" uid="uid://5r6pgoqxwpjf" path="res://Scenes/Components/CreatureComponent/creature_component.tscn" id="2_dpatv"]
+
+[node name="Balrog" type="Sprite2D"]
+texture = ExtResource("1_uc0wq")
+centered = false
+offset = Vector2(-92, -192)
+
+[node name="CreatureComponent" parent="." instance=ExtResource("2_dpatv")]

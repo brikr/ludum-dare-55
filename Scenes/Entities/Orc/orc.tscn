@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dgon50v55gqrm"]
+
+[ext_resource type="Texture2D" uid="uid://ci756lnfdwd0b" path="res://Assets/orc.aseprite" id="1_bepf4"]
+
+[node name="Orc" type="Sprite2D"]
+texture = ExtResource("1_bepf4")
+centered = false
+offset = Vector2(-32, -64)

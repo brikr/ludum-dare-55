@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://gbw0bb5tkh2s"]
+
+[ext_resource type="Texture2D" uid="uid://hlwupjnl8e62" path="res://Assets/disciple.aseprite" id="1_s3otl"]
+[ext_resource type="PackedScene" uid="uid://5r6pgoqxwpjf" path="res://Scenes/Components/CreatureComponent/creature_component.tscn" id="2_0wsa8"]
+
+[node name="Disciple" type="Sprite2D"]
+texture = ExtResource("1_s3otl")
+centered = false
+offset = Vector2(-24, -64)
+
+[node name="CreatureComponent" parent="." instance=ExtResource("2_0wsa8")]

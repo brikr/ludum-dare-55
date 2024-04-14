@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bwls28j4qnhsx"]
+
+[ext_resource type="Script" path="res://Scenes/Preloaded/preloaded.gd" id="1_bb1ns"]
+
+[node name="Preloaded" type="Node"]
+script = ExtResource("1_bb1ns")

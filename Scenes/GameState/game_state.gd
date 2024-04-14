@@ -3,6 +3,10 @@ extends Node
 # Keeps track of game state. This node is autoloaded so every seen can peep it
 
 
+signal building_constructed
+signal summon_count_changed
+
+
 # Current resource/entity counts
 var arsenal := {
   "mana": 0,
@@ -11,6 +15,7 @@ var arsenal := {
   "imp": 0,
   "kobold": 0,
   "hellhound": 0,
+  "rift portal": 1
 
   # DEBUG
   #"disciple": 1,
@@ -72,9 +77,12 @@ func summon(entity: String):
   var cost = get_cost(entity)
   for requirement in cost:
     arsenal[requirement] -= cost[requirement]
+    if Constants.SUMMON_COSTS.has(requirement):
+      summon_count_changed.emit(requirement, arsenal[requirement])
 
   # Give the new lad
   arsenal[entity] += 1
+  summon_count_changed.emit(entity, arsenal[entity])
   print(arsenal)
 
 
@@ -93,9 +101,12 @@ func construct_building(building: String):
   var cost = get_cost(building)
   for requirement in cost:
     arsenal[requirement] -= cost[requirement]
+    if Constants.SUMMON_COSTS.has(requirement):
+      summon_count_changed.emit(requirement, arsenal[requirement])
 
   # Give the build
   arsenal[building] += 1
+  building_constructed.emit(building, arsenal[building])
   print(arsenal)
 
 
@@ -176,5 +187,5 @@ func get_supply() -> int:
 
 
 func get_supply_cap() -> int:
-  return get_count("rift portal") * 10 + 10
+  return get_count("rift portal") * 10
 

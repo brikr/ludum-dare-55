@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://cxka05awyyk40"]
+
+[ext_resource type="Texture2D" uid="uid://birj7ybmfoloq" path="res://Assets/hellhound.aseprite" id="1_kqqxk"]
+[ext_resource type="PackedScene" uid="uid://5r6pgoqxwpjf" path="res://Scenes/Components/CreatureComponent/creature_component.tscn" id="2_2gu4m"]
+
+[node name="Hellhound" type="Sprite2D"]
+texture = ExtResource("1_kqqxk")
+centered = false
+offset = Vector2(-32, -32)
+
+[node name="CreatureComponent" parent="." instance=ExtResource("2_2gu4m")]

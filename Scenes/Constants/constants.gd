@@ -65,9 +65,9 @@ const SUMMON_COSTS := {
     "apprentice": 1
   },
   "pit lord": {
-    #"mana": 500,
-    #"gems": 500,
-    #"imp": 50
+    "mana": 500,
+    "gems": 500,
+    "imp": 50
   },
   "balrog": {
     "mana": 500,
@@ -79,16 +79,16 @@ const SUMMON_COSTS := {
 
 const BUILDING_COSTS := {
   "rift portal": {
-    #"gems": 1000
+    "gems": 1000
   },
   "shadow well": {
-    #"gems": 500
+    "gems": 500
   },
   "soul conduit": {
-    #"gems": 1500
+    "gems": 1500
   },
   "dark library": {
-    #"gems": 2000
+    "gems": 2000
   }
 }
 
@@ -153,6 +153,22 @@ const BASE_DEMON_POWER := {
   "disciple": 3,
   "pit lord": 10,
   "balrog": 50
+}
+
+# Which region each creature type should be placed in
+const PLACEMENT_REGIONS := {
+  "imp": "MineRegion",
+  "kobold": "MineRegion",
+  "hellhound": "ArmyRegion",
+  "dwarf soul": "MineRegion",
+  "orc": "MineRegion",
+  "demon brute": "ArmyRegion",
+  "apprentice": "SummonerRegion",
+  "abomination": "MineRegion",
+  "black knight": "ArmyRegion",
+  "disciple": "SummonerRegion",
+  "pit lord": "ArmyRegion",
+  "balrog": "ArmyRegion"
 }
 
 # Attack size at the end of each night

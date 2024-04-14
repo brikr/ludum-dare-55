@@ -1,4 +1,19 @@
-res://Scenes/Entities/RiftPortal
+res://Scenes/Components/CreatureComponent
+res://Scenes/Preloaded
+res://Scenes/Entities/PitLord
+res://Scenes/Entities/Orc
+res://Scenes/Entities/Kobold
+res://Scenes/Entities/Hellhound
+res://Scenes/Entities/DwarfSoul
+res://Scenes/Entities/Disciple
+res://Scenes/Entities/DemonBrute
+res://Scenes/Entities/Crystal
+res://Scenes/Entities/BlackKnight
+res://Scenes/Entities/Balrog
+res://Scenes/Entities/Abomination
+res://Scenes/Entities/Apprentice
+res://Scenes/Entities/Imp
+res://Scenes/Entities
 C:/Program Files/Aseprite
 res://Scenes/UI
 res://Scenes/Constants

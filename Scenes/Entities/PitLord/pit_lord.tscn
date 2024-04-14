@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://dmwhyvpblouxs"]
+
+[ext_resource type="Texture2D" uid="uid://bpvmcsqjk3v33" path="res://Assets/pit lord.aseprite" id="1_qt3q3"]
+[ext_resource type="PackedScene" uid="uid://5r6pgoqxwpjf" path="res://Scenes/Components/CreatureComponent/creature_component.tscn" id="2_boi8e"]
+
+[node name="PitLord" type="Sprite2D"]
+texture = ExtResource("1_qt3q3")
+centered = false
+offset = Vector2(-96, -128)
+
+[node name="CreatureComponent" parent="." instance=ExtResource("2_boi8e")]

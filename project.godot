@@ -22,6 +22,7 @@ aseprite_executable_path="C:/Program Files/Aseprite/Aseprite.exe"
 [autoload]
 
 Constants="*res://Scenes/Constants/constants.tscn"
+Preloaded="*res://Scenes/Preloaded/preloaded.tscn"
 GameState="*res://Scenes/GameState/game_state.tscn"
 
 [display]

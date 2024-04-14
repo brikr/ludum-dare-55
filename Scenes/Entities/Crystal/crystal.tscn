@@ -1,0 +1,34 @@
+[gd_scene load_steps=6 format=3 uid="uid://dvc153nuqaete"]
+
+[ext_resource type="Script" path="res://Scenes/Entities/Crystal/crystal.gd" id="1_i36e0"]
+[ext_resource type="Texture2D" uid="uid://bu6l64cekgltg" path="res://Assets/crystal1.aseprite" id="1_nis68"]
+[ext_resource type="Texture2D" uid="uid://dflevg424y42c" path="res://Assets/crystal2.aseprite" id="2_1se3d"]
+[ext_resource type="Texture2D" uid="uid://c1u25qdwxsalm" path="res://Assets/crystal3.aseprite" id="3_ha4rf"]
+[ext_resource type="Texture2D" uid="uid://dc81opas6gu7v" path="res://Assets/crystal4.aseprite" id="4_twv6y"]
+
+[node name="Crystal" type="Node2D"]
+script = ExtResource("1_i36e0")
+
+[node name="Sprite1" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("1_nis68")
+centered = false
+offset = Vector2(-16, -32)
+
+[node name="Sprite2" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("2_1se3d")
+centered = false
+offset = Vector2(-16, -32)
+
+[node name="Sprite3" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("3_ha4rf")
+centered = false
+offset = Vector2(-16, -32)
+
+[node name="Sprite4" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("4_twv6y")
+centered = false
+offset = Vector2(-16, -32)
