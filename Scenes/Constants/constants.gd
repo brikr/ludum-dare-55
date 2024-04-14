@@ -29,7 +29,7 @@ const SUMMON_COSTS := {
   "orc": {
     "mana": 100,
     "gems": 75,
-    "imp": 3,
+    #"imp": 3,
     "kobold": 1,
     "hellhound": 1
   },
@@ -48,14 +48,14 @@ const SUMMON_COSTS := {
     "mana": 250,
     "gems": 100,
     "imp": 5,
-    "kobold": 2,
+    #"kobold": 2,
     "dwarf soul": 1
   },
   "black knight": {
     "mana": 250,
     "gems": 100,
-    "hellhound": 3,
-    "orc": 2,
+    #"hellhound": 3,
+    "orc": 1,
     "demon brute": 1
   },
   # Tier 5
@@ -152,7 +152,7 @@ const BASE_DEMON_POWER := {
   "black knight": 20,
   "disciple": 3,
   "pit lord": 10,
-  "balrog": 50
+  "balrog": 150
 }
 
 # Which region each creature type should be placed in
