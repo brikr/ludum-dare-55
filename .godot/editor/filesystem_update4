@@ -12,3 +12,4 @@ res://Scenes/Entities/ShadowWell/shadow_well.tscn
 res://Scenes/Entities/ShadowWell/shadow_well.gd
 res://Scenes/Entities/SoulConduit/soul_conduit.tscn
 res://Scenes/Entities/SoulConduit/soul_conduit.gd
+res://Scenes/Constants/constants.gd

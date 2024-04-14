@@ -152,7 +152,23 @@ func show_win_screen():
   summoning_allowed = false
 
 
-func show_summary(results: Dictionary):
+func fade_to_black(callback: Callable):
+  $NightMask.set_visible(true)
+  var tween = create_tween()
+  tween.tween_property($NightMask, "color", Color(Color.BLACK, 0), 0)
+  tween.tween_property($NightMask, "color", Color(Color.BLACK, 1), 1)
+  tween.tween_callback(callback)
+
+
+func fade_from_black():
+  var tween = create_tween()
+  tween.tween_property($NightMask, "color", Color(Color.BLACK, 1), 0)
+  tween.tween_property($NightMask, "color", Color(Color.BLACK, 0), 1)
+  tween.tween_callback($NightMask.set_visible.bind(false))
+
+
+func show_summary():
+  var results = GameState.last_night_results
   var key_suffix = "_survived" if results["survived"] else "_failed"
 
   $Summary/SummaryHeader.text = Constants.NIGHT_SUMMARY_STRINGS["header" + key_suffix]
@@ -211,6 +227,7 @@ func _on_building_pressed(building: String):
 
 func _on_summary_button_pressed():
   $ButtonClickSound.play()
+  fade_from_black()
   if GameState.last_night_results["survived"]:
     $Summary.set_visible(false)
     summoning_allowed = true

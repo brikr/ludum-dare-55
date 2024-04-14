@@ -71,9 +71,9 @@ func _on_night_ended(results: Dictionary):
     $NightLostSound.play()
 
   if results.won:
-    $UI.show_win_screen()
+    $UI.fade_to_black($UI.show_win_screen)
   else:
-    $UI.show_summary(results)
+    $UI.fade_to_black($UI.show_summary)
 
 
 func _on_summon_count_changed(creature: String, count: int):

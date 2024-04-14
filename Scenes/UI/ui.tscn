@@ -197,6 +197,12 @@ text = "[b]Imp[/b]
 
 Basic worker"
 
+[node name="NightMask" type="ColorRect" parent="."]
+visible = false
+offset_right = 1600.0
+offset_bottom = 900.0
+color = Color(0.0156863, 0.0156863, 0.0156863, 1)
+
 [node name="Intro" type="Panel" parent="."]
 offset_left = 400.0
 offset_top = 102.0
