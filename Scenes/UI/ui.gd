@@ -1,7 +1,8 @@
 extends CanvasLayer
 
-signal continue_button_pressed
 signal start_button_pressed
+signal restart_button_pressed
+signal continue_button_pressed
 
 const RESOURCE_STRING := "%s: %s (+%s)"
 const SUPPLY_STRING := "Summons: %d/%d"
@@ -185,6 +186,8 @@ func _on_button_mouse_exited(entity: String):
 
 func _on_summon_gui_input(event: InputEvent, creature: String):
   if event is InputEventMouseButton && summoning_allowed:
+    if event.is_released():
+      $ButtonClickSound.play()
     if Input.is_action_just_released("ui_left_click"):
       GameState.summon(creature)
     elif Input.is_action_just_released("ui_right_click"):
@@ -192,24 +195,27 @@ func _on_summon_gui_input(event: InputEvent, creature: String):
 
 
 func _on_building_pressed(building: String):
+  $ButtonClickSound.play()
   if summoning_allowed:
     GameState.construct_building(building)
 
 
 func _on_summary_button_pressed():
+  $ButtonClickSound.play()
   if GameState.last_night_results["survived"]:
     $Summary.set_visible(false)
     summoning_allowed = true
     continue_button_pressed.emit()
   else:
-    get_tree().quit()
+    restart_button_pressed.emit()
 
 
 func _on_start_button_pressed():
+  $ButtonClickSound.play()
   $Intro.set_visible(false)
   start_button_pressed.emit()
   summoning_allowed = true
 
 
-func _on_quit_button_pressed():
-  get_tree().quit()
+func _on_play_again_button_pressed():
+  restart_button_pressed.emit()

@@ -1,3 +1,5 @@
+AudioStreamPlayer
+AudioStreamPlayer2D
 RichTextLabel
 Panel
 Button
@@ -10,5 +12,3 @@ Sprite2D
 PanelContainer
 VFlowContainer
 Control
-GridContainer
-TextureButton

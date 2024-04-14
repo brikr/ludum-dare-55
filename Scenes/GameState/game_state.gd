@@ -9,20 +9,7 @@ signal night_ended
 
 
 # Current resource/entity counts
-var arsenal := {
-  # TODO: remember to set these to zero before submission
-  "mana": 1000000,
-  "gems": 1000000,
-  # including these here so apprentice/disciple code doesn't have to default them to zero
-  "imp": 0,
-  "kobold": 0,
-  "hellhound": 0,
-  "rift portal": 1
-
-  # DEBUG
-  #"disciple": 1,
-  #"dark library": 1
-}
+var arsenal := Constants.STARTING_ARSENAL.duplicate()
 
 var current_night := 1
 var time_until_day := 180
@@ -40,6 +27,12 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
   pass
+
+
+func reset_game_state():
+  arsenal = Constants.STARTING_ARSENAL.duplicate()
+  current_night = 1
+  time_until_day = 180
 
 
 func tick():

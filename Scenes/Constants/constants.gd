@@ -4,6 +4,22 @@ extends Object
 const BASE_MANA_REGEN := 5
 
 
+const STARTING_ARSENAL := {
+  # TODO: remember to set these to zero before submission
+  "mana": 1000000,
+  "gems": 1000000,
+  # including these here so apprentice/disciple code doesn't have to default them to zero
+  "imp": 0,
+  "kobold": 0,
+  "hellhound": 0,
+  "rift portal": 1
+
+  # DEBUG
+  #"disciple": 1,
+  #"dark library": 1
+}
+
+
 # Cost of each summon. Also source of truth for every available summon
 const SUMMON_COSTS := {
   # Tier 1
@@ -180,7 +196,7 @@ const NIGHT_SUMMARY_STRINGS := {
   "desc_survived": "You should spend the next night preparing for another attack.",
   "desc_failed": "Better luck next time!",
   "button_survived": "Continue",
-  "button_failed": "Exit",
+  "button_failed": "Restart",
   "bonus_gems": "Your army captures the adventurers' essence and convert them to 500 gems.",
   "bonus_dwarf soul": "A dwarven adventurer's soul was intercepted on its way to the afterlife and has been put to work in the mines.",
   "bonus_black knight": "A strong warrior among the adventuring party succumbed to your magic and has joined the army as a Black Knight.",

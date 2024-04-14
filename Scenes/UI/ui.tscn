@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://cisb4l6jm1y01"]
+[gd_scene load_steps=4 format=3 uid="uid://cisb4l6jm1y01"]
 
 [ext_resource type="Script" path="res://Scenes/UI/ui.gd" id="1_jxhsp"]
+[ext_resource type="AudioStream" uid="uid://dva4wvbes0a8k" path="res://Assets/button_click.wav" id="2_aawa8"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_35tpa"]
 bg_color = Color(0.0784314, 0.0784314, 0.0784314, 1)
@@ -258,13 +259,13 @@ Congratulations! You survived long enough to amass an unstoppable army. The worl
 
 Thanks for playing."
 
-[node name="QuitButton" type="Button" parent="Win"]
+[node name="PlayAgainButton" type="Button" parent="Win"]
 layout_mode = 0
 offset_left = 300.0
 offset_top = 371.0
 offset_right = 500.0
 offset_bottom = 421.0
-text = "Quit Game"
+text = "Play again"
 
 [node name="WinFooter" type="RichTextLabel" parent="Win"]
 layout_mode = 0
@@ -322,6 +323,10 @@ offset_right = 500.0
 offset_bottom = 476.0
 text = "Continue"
 
+[node name="ButtonClickSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_aawa8")
+volume_db = -4.685
+
 [connection signal="pressed" from="Intro/StartButton" to="." method="_on_start_button_pressed"]
-[connection signal="pressed" from="Win/QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="Win/PlayAgainButton" to="." method="_on_play_again_button_pressed"]
 [connection signal="pressed" from="Summary/SummaryButton" to="." method="_on_summary_button_pressed"]

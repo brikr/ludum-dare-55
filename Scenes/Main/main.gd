@@ -63,6 +63,12 @@ func place_creature(creature: String, node: Node2D):
 
 func _on_night_ended(results: Dictionary):
   $TickTimer.stop()
+
+  if (results["survived"]):
+    $NightWonSound.play()
+  else:
+    $NightLostSound.play()
+
   if results.won:
     $UI.show_win_screen()
   else:
@@ -106,3 +112,8 @@ func _on_ui_continue_button_pressed():
 
 func _on_ui_start_button_pressed():
   $TickTimer.start()
+
+
+func _on_ui_restart_button_pressed():
+  GameState.reset_game_state()
+  get_tree().reload_current_scene()
