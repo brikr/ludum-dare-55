@@ -176,6 +176,7 @@ layout_mode = 2
 text = "Forbidden Library"
 
 [node name="Tooltip" type="Panel" parent="."]
+visible = false
 offset_left = 10.0
 offset_top = 290.0
 offset_right = 360.0
