@@ -1,5 +1,5 @@
-res://Scenes/Components/CreatureComponent/creature_component.tscn::853f7df55c69d025918edc0f274145c3::1713124348::res://.godot/exported/133200997/export-a1bbc9e6020800efa47e6a1a14a8f922-creature_component.scn
-res://Scenes/Constants/constants.tscn::82519d0a288b3dec1a181ce1651c540d::1713124348::res://.godot/exported/133200997/export-48b912f954b7338bede61b55af0f5646-constants.scn
+res://Scenes/Components/CreatureComponent/creature_component.tscn::853f7df55c69d025918edc0f274145c3::1713135634::res://.godot/exported/133200997/export-a1bbc9e6020800efa47e6a1a14a8f922-creature_component.scn
+res://Scenes/Constants/constants.tscn::82519d0a288b3dec1a181ce1651c540d::1713135669::res://.godot/exported/133200997/export-48b912f954b7338bede61b55af0f5646-constants.scn
 res://Scenes/Entities/Abomination/abomination.tscn::01df3542509c78650db98d76cc74ae51::1713058816::res://.godot/exported/133200997/export-3f722ebea8260156d69b9bbdad4cf893-abomination.scn
 res://Scenes/Entities/Apprentice/apprentice.tscn::e7bef68f08c31de4dc7ebcec0cd6a043::1713058816::res://.godot/exported/133200997/export-630441816f5b2e8c888136502d269207-apprentice.scn
 res://Scenes/Entities/Balrog/balrog.tscn::a84c9ea3a63f9bf642ad6c058f1a6e48::1713058816::res://.godot/exported/133200997/export-cf024e56412a82ab7f98177eefb25b8c-balrog.scn
@@ -14,7 +14,10 @@ res://Scenes/Entities/Kobold/kobold.tscn::9b8f77ee926b128fa22fb3355e4bba75::1713
 res://Scenes/Entities/Orc/orc.tscn::a3db7a9432009a7064da4ebb51771c4f::1713058816::res://.godot/exported/133200997/export-7f9fa42b965b20e507cd2894268bb11d-orc.scn
 res://Scenes/Entities/PitLord/pit_lord.tscn::063dab43b99f16a6ec0016e5831f00df::1713058816::res://.godot/exported/133200997/export-b86b492dcdac5645ad6e1cec3f8e0f55-pit_lord.scn
 res://Scenes/GameState/game_state.tscn::f76a7ad4ad2e0468d110c5938d44ff9f::1713054764::res://.godot/exported/133200997/export-2729d354a552f4a71c60004e226f5e0c-game_state.scn
-res://Scenes/Main/main.tscn::5927908d69783633a279c95918934c5f::1713124348::res://.godot/exported/133200997/export-0c6835a2b535eafd02a3b62c0a86d578-main.scn
+res://Scenes/Main/main.tscn::07bba188fb69d85295c04bd7bdb4add2::1713135634::res://.godot/exported/133200997/export-0c6835a2b535eafd02a3b62c0a86d578-main.scn
 res://Scenes/Preloaded/preloaded.tscn::3bac1044bb24d7edfbcb7b5d81ce14c3::1713054764::res://.godot/exported/133200997/export-dee59e6c6403b1bdb588aca92b603876-preloaded.scn
-res://Scenes/UI/ui.tscn::8ee2f4b4119679fec90bc0f38da47916::1713124348::res://.godot/exported/133200997/export-2513678422fd8eb48a4501dc6d5fd190-ui.scn
-res://theme.tres::6adf1915be883957f5a8abdb1f5c8a5e::1713117378::res://.godot/exported/133200997/export-1b11a992ebcc6f262e4ee4a4db300a0d-theme.res
+res://Scenes/UI/ui.tscn::6d52b5b727778764fb12806fd7ce3144::1713135634::res://.godot/exported/133200997/export-2513678422fd8eb48a4501dc6d5fd190-ui.scn
+res://theme.tres::fedcf60306357312c3d1238fc3ebbe78::1713126736::res://.godot/exported/133200997/export-1b11a992ebcc6f262e4ee4a4db300a0d-theme.res
+res://Scenes/Entities/RiftPortal/rift_portal.tscn::cea8d19f6a1a2122e7bc894734bd345c::1713135634::res://.godot/exported/133200997/export-d69f7d310ec0d4ddf9da3b08efa6e989-rift_portal.scn
+res://Scenes/Entities/ShadowWell/shadow_well.tscn::b4cdf9d9e2cb1d0911dbfadf11cc1972::1713135634::res://.godot/exported/133200997/export-397454be4e9d9238b66bc2b88741bc47-shadow_well.scn
+res://Scenes/Entities/SoulConduit/soul_conduit.tscn::cfd43a5e348147249dd2c306b8c64480::1713135634::res://.godot/exported/133200997/export-ee60355632f2ed5c381c10a8da9252d0-soul_conduit.scn
