@@ -35,8 +35,8 @@ const SUMMON_COSTS := {
   "demon brute": {
     "mana": 100,
     "gems": 50,
-    "imp": 5,
-    "hellhound": 1
+    "imp": 3,
+    "hellhound": 2
   },
   # Tier 4
   "apprentice": {
@@ -50,7 +50,7 @@ const SUMMON_COSTS := {
   },
   "black knight": {
     "mana": 250,
-    "gems": 100,
+    "gems": 200,
     "orc": 1,
     "demon brute": 1
   },
@@ -61,12 +61,12 @@ const SUMMON_COSTS := {
   },
   "pit lord": {
     "mana": 500,
-    "gems": 500,
+    "gems": 1000,
     "imp": 50
   },
   "balrog": {
     "mana": 500,
-    "gems": 500,
+    "gems": 2000,
     "demon brute": 5,
     "black knight": 2
   }
@@ -80,7 +80,7 @@ const BUILDING_COSTS := {
     "gems": 500
   },
   "soul conduit": {
-    "gems": 1000
+    "gems": 250
   },
   "dark library": {
     "gems": 2000

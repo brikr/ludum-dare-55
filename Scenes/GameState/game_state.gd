@@ -67,16 +67,15 @@ func tick():
 
     var new_creatures := {
       # order important here
-      "imp": apprentice_count * mult + disciple_count * mult,
-      "kobold": disciple_count * mult,
-      "hellhound": disciple_count * mult
+      "hellhound": disciple_count * mult,
+      "imp": apprentice_count * mult
     }
 
     # Add as many as we can without going over supply cap
     var cap = get_supply_cap()
     var supply = get_supply()
     var available = cap - supply
-    for creature in ["hellhound", "kobold", "imp"]:
+    for creature in new_creatures:
       print("available", available, "creature", creature)
       if new_creatures[creature] <= available:
         # fits
@@ -97,7 +96,6 @@ func tick():
         arsenal["gems"] += Constants.SUMMON_COSTS[creature]["gems"] * new_creatures[creature]
 
     summon_count_changed.emit("imp", arsenal["imp"])
-    summon_count_changed.emit("kobold", arsenal["kobold"])
     summon_count_changed.emit("hellhound", arsenal["hellhound"])
 
   if time_until_day == 0:
