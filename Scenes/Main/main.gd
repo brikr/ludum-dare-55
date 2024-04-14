@@ -99,3 +99,7 @@ func _on_tick_timer_timeout():
 func _on_ui_continue_button_pressed():
   GameState.current_night += 1
   $TickTimer.start()
+
+
+func _on_ui_start_button_pressed():
+  $TickTimer.start()

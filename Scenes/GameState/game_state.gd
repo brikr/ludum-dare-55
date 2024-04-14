@@ -27,7 +27,7 @@ var current_night := 1
 var time_until_day := 180
 var last_night_results := {
   "survived": true,
-  "bonuses": ["apprentice", "black_knight", "gems"]
+  "bonuses": []
 }
 
 
@@ -161,6 +161,7 @@ func apply_bonus(bonus: String):
         arsenal[creature] = 1
       else:
         arsenal[creature] += 1
+      summon_count_changed.emit(creature, arsenal[creature])
 
 
 func end_night():

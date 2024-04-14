@@ -1,17 +1,18 @@
 extends CanvasLayer
 
 signal continue_button_pressed
+signal start_button_pressed
 
 const RESOURCE_STRING := "%s: %s (+%s)"
 const SUPPLY_STRING := "Summons: %d/%d"
 const SUMMON_STRING := "%s (%d)"
 const BUILDING_STRING := "%s (%d/%d)"
 const NIGHT_STRING := "Night %d"
-const TIMER_STRING := "Time until night: %d:%02d"
+const TIMER_STRING := "Time until day: %d:%02d"
 const ATTACK_SIZE_STRING := "%s: %d"
 
 var hovered_entity := "imp"
-var summary_shown := false
+var summoning_allowed := false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -19,7 +20,6 @@ func _ready():
   for button in $SummonButtons.get_children():
     if button is Button: # (there are some spacers)
       var entity := button.name.to_lower()
-      #button.pressed.connect(_on_summon_pressed.bind(entity))
       button.gui_input.connect(_on_summon_gui_input.bind(entity))
       button.mouse_entered.connect(_on_button_mouse_entered.bind(entity))
       button.mouse_exited.connect(_on_button_mouse_exited.bind(entity))
@@ -53,10 +53,10 @@ func update_labels():
   else:
     $Resources/SummonCount.set("theme_override_colors/font_color", Color.WHITE)
 
-  $Resources/DemonPower.text = ATTACK_SIZE_STRING % ["Demon Power", GameState.get_demon_power()]
+  $Resources/DemonPower.text = ATTACK_SIZE_STRING % ["Army power", GameState.get_demon_power()]
 
   $Info/NightCounter.text = NIGHT_STRING % GameState.current_night
-  $Info/AttackSize.text = ATTACK_SIZE_STRING % ["Attack Size", Constants.ATTACK_SIZES[GameState.current_night - 1]]
+  $Info/AttackSize.text = ATTACK_SIZE_STRING % ["Incoming attack size", Constants.ATTACK_SIZES[GameState.current_night - 1]]
 
   var minutes := floori(GameState.time_until_day / 60)
   var seconds := floori(GameState.time_until_day % 60)
@@ -154,7 +154,7 @@ func show_summary(results: Dictionary):
   $Summary/SummaryButton.text = Constants.NIGHT_SUMMARY_STRINGS["button" + key_suffix]
 
   $Summary.set_visible(true)
-  summary_shown = true
+  summoning_allowed = false
 
 
 # number to string; if the number is >=10k, formats in k format
@@ -178,13 +178,8 @@ func _on_button_mouse_exited(entity: String):
   #print("left %s" % entity)
 
 
-func _on_summon_pressed(creature: String):
-  if !summary_shown:
-    GameState.summon(creature)
-
-
 func _on_summon_gui_input(event: InputEvent, creature: String):
-  if event is InputEventMouseButton && !summary_shown:
+  if event is InputEventMouseButton && summoning_allowed:
     if Input.is_action_just_released("ui_left_click"):
       GameState.summon(creature)
     elif Input.is_action_just_released("ui_right_click"):
@@ -192,14 +187,20 @@ func _on_summon_gui_input(event: InputEvent, creature: String):
 
 
 func _on_building_pressed(building: String):
-  if !summary_shown:
+  if summoning_allowed:
     GameState.construct_building(building)
 
 
 func _on_summary_button_pressed():
   if GameState.last_night_results["survived"]:
     $Summary.set_visible(false)
-    summary_shown = false
+    summoning_allowed = true
     continue_button_pressed.emit()
   else:
     get_tree().quit()
+
+
+func _on_start_button_pressed():
+  $Intro.set_visible(false)
+  start_button_pressed.emit()
+  summoning_allowed = true

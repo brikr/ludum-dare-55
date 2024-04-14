@@ -28,7 +28,6 @@ centered = false
 [node name="UI" parent="." instance=ExtResource("2_0ajhu")]
 
 [node name="TickTimer" type="Timer" parent="."]
-autostart = true
 
 [node name="Entities" type="Node2D" parent="."]
 y_sort_enabled = true
@@ -433,4 +432,5 @@ position = Vector2(768, 384)
 shape = SubResource("RectangleShape2D_r36x8")
 
 [connection signal="continue_button_pressed" from="UI" to="." method="_on_ui_continue_button_pressed"]
+[connection signal="start_button_pressed" from="UI" to="." method="_on_ui_start_button_pressed"]
 [connection signal="timeout" from="TickTimer" to="." method="_on_tick_timer_timeout"]
