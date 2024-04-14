@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bg405f8dgnf3r"]
+[gd_scene load_steps=12 format=3 uid="uid://bg405f8dgnf3r"]
 
 [ext_resource type="Script" path="res://Scenes/Main/main.gd" id="1_kfhol"]
 [ext_resource type="PackedScene" uid="uid://cisb4l6jm1y01" path="res://Scenes/UI/ui.tscn" id="2_0ajhu"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://ctpqm07ksh0gl" path="res://Assets/shadow well.aseprite" id="5_l27q6"]
 [ext_resource type="Texture2D" uid="uid://coty2se4hv3pt" path="res://Assets/soul conduit.aseprite" id="6_bblj0"]
 [ext_resource type="Texture2D" uid="uid://dpgqoica0c1ox" path="res://Assets/dark library.aseprite" id="7_nkwg7"]
+[ext_resource type="PackedScene" uid="uid://dvc153nuqaete" path="res://Scenes/Entities/Crystal/crystal.tscn" id="8_tqy7h"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n2hd6"]
 size = Vector2(256, 576)
@@ -41,6 +42,7 @@ centered = false
 offset = Vector2(-32, -128)
 
 [node name="Rift Portal2" type="Sprite2D" parent="Entities"]
+visible = false
 y_sort_enabled = true
 position = Vector2(608, 640)
 texture = ExtResource("4_tbauk")
@@ -48,6 +50,7 @@ centered = false
 offset = Vector2(-32, -128)
 
 [node name="Rift Portal3" type="Sprite2D" parent="Entities"]
+visible = false
 y_sort_enabled = true
 position = Vector2(864, 640)
 texture = ExtResource("4_tbauk")
@@ -55,6 +58,7 @@ centered = false
 offset = Vector2(-32, -128)
 
 [node name="Rift Portal4" type="Sprite2D" parent="Entities"]
+visible = false
 y_sort_enabled = true
 position = Vector2(1248, 128)
 texture = ExtResource("4_tbauk")
@@ -62,6 +66,7 @@ centered = false
 offset = Vector2(-32, -128)
 
 [node name="Rift Portal5" type="Sprite2D" parent="Entities"]
+visible = false
 y_sort_enabled = true
 position = Vector2(544, 128)
 texture = ExtResource("4_tbauk")
@@ -69,6 +74,7 @@ centered = false
 offset = Vector2(-32, -128)
 
 [node name="Rift Portal6" type="Sprite2D" parent="Entities"]
+visible = false
 y_sort_enabled = true
 position = Vector2(640, 128)
 texture = ExtResource("4_tbauk")
@@ -76,6 +82,7 @@ centered = false
 offset = Vector2(-32, -128)
 
 [node name="Rift Portal7" type="Sprite2D" parent="Entities"]
+visible = false
 y_sort_enabled = true
 position = Vector2(1344, 128)
 texture = ExtResource("4_tbauk")
@@ -83,6 +90,7 @@ centered = false
 offset = Vector2(-32, -128)
 
 [node name="Rift Portal8" type="Sprite2D" parent="Entities"]
+visible = false
 y_sort_enabled = true
 position = Vector2(512, 640)
 texture = ExtResource("4_tbauk")
@@ -90,6 +98,7 @@ centered = false
 offset = Vector2(-32, -128)
 
 [node name="Rift Portal9" type="Sprite2D" parent="Entities"]
+visible = false
 y_sort_enabled = true
 position = Vector2(960, 640)
 texture = ExtResource("4_tbauk")
@@ -97,6 +106,7 @@ centered = false
 offset = Vector2(-32, -128)
 
 [node name="Rift Portal10" type="Sprite2D" parent="Entities"]
+visible = false
 y_sort_enabled = true
 position = Vector2(256, 128)
 texture = ExtResource("4_tbauk")
@@ -104,6 +114,7 @@ centered = false
 offset = Vector2(-32, -128)
 
 [node name="Shadow Well1" type="Sprite2D" parent="Entities"]
+visible = false
 y_sort_enabled = true
 position = Vector2(416, 640)
 texture = ExtResource("5_l27q6")
@@ -111,6 +122,7 @@ centered = false
 offset = Vector2(-64, -64)
 
 [node name="Shadow Well2" type="Sprite2D" parent="Entities"]
+visible = false
 y_sort_enabled = true
 position = Vector2(960, 128)
 texture = ExtResource("5_l27q6")
@@ -118,6 +130,7 @@ centered = false
 offset = Vector2(-64, -64)
 
 [node name="Shadow Well3" type="Sprite2D" parent="Entities"]
+visible = false
 y_sort_enabled = true
 position = Vector2(1088, 640)
 texture = ExtResource("5_l27q6")
@@ -125,6 +138,7 @@ centered = false
 offset = Vector2(-64, -64)
 
 [node name="Shadow Well4" type="Sprite2D" parent="Entities"]
+visible = false
 y_sort_enabled = true
 position = Vector2(768, 128)
 texture = ExtResource("5_l27q6")
@@ -132,6 +146,7 @@ centered = false
 offset = Vector2(-64, -64)
 
 [node name="Shadow Well5" type="Sprite2D" parent="Entities"]
+visible = false
 y_sort_enabled = true
 position = Vector2(736, 640)
 texture = ExtResource("5_l27q6")
@@ -139,6 +154,7 @@ centered = false
 offset = Vector2(-64, -64)
 
 [node name="Shadow Well6" type="Sprite2D" parent="Entities"]
+visible = false
 y_sort_enabled = true
 position = Vector2(736, 576)
 texture = ExtResource("5_l27q6")
@@ -146,6 +162,7 @@ centered = false
 offset = Vector2(-64, -64)
 
 [node name="Shadow Well7" type="Sprite2D" parent="Entities"]
+visible = false
 y_sort_enabled = true
 position = Vector2(1088, 576)
 texture = ExtResource("5_l27q6")
@@ -153,6 +170,7 @@ centered = false
 offset = Vector2(-64, -64)
 
 [node name="Shadow Well8" type="Sprite2D" parent="Entities"]
+visible = false
 y_sort_enabled = true
 position = Vector2(960, 192)
 texture = ExtResource("5_l27q6")
@@ -160,6 +178,7 @@ centered = false
 offset = Vector2(-64, -64)
 
 [node name="Shadow Well9" type="Sprite2D" parent="Entities"]
+visible = false
 y_sort_enabled = true
 position = Vector2(416, 576)
 texture = ExtResource("5_l27q6")
@@ -167,6 +186,7 @@ centered = false
 offset = Vector2(-64, -64)
 
 [node name="Shadow Well10" type="Sprite2D" parent="Entities"]
+visible = false
 y_sort_enabled = true
 position = Vector2(768, 192)
 texture = ExtResource("5_l27q6")
@@ -174,6 +194,7 @@ centered = false
 offset = Vector2(-64, -64)
 
 [node name="Soul Conduit1" type="Sprite2D" parent="Entities"]
+visible = false
 y_sort_enabled = true
 position = Vector2(416, 448)
 texture = ExtResource("6_bblj0")
@@ -181,6 +202,7 @@ centered = false
 offset = Vector2(-32, -128)
 
 [node name="Soul Conduit2" type="Sprite2D" parent="Entities"]
+visible = false
 y_sort_enabled = true
 position = Vector2(736, 448)
 texture = ExtResource("6_bblj0")
@@ -188,6 +210,7 @@ centered = false
 offset = Vector2(-32, -128)
 
 [node name="Soul Conduit3" type="Sprite2D" parent="Entities"]
+visible = false
 y_sort_enabled = true
 position = Vector2(1088, 448)
 texture = ExtResource("6_bblj0")
@@ -195,6 +218,7 @@ centered = false
 offset = Vector2(-32, -128)
 
 [node name="Soul Conduit4" type="Sprite2D" parent="Entities"]
+visible = false
 y_sort_enabled = true
 position = Vector2(896, 352)
 texture = ExtResource("6_bblj0")
@@ -202,6 +226,7 @@ centered = false
 offset = Vector2(-32, -128)
 
 [node name="Soul Conduit5" type="Sprite2D" parent="Entities"]
+visible = false
 y_sort_enabled = true
 position = Vector2(576, 352)
 texture = ExtResource("6_bblj0")
@@ -209,9 +234,186 @@ centered = false
 offset = Vector2(-32, -128)
 
 [node name="Dark Library1" type="Sprite2D" parent="Entities"]
+visible = false
 y_sort_enabled = true
 position = Vector2(1472, 64)
 texture = ExtResource("7_nkwg7")
+
+[node name="Crystal1" parent="Entities" instance=ExtResource("8_tqy7h")]
+y_sort_enabled = true
+position = Vector2(64, 96)
+
+[node name="Crystal2" parent="Entities" instance=ExtResource("8_tqy7h")]
+y_sort_enabled = true
+position = Vector2(128, 96)
+
+[node name="Crystal3" parent="Entities" instance=ExtResource("8_tqy7h")]
+y_sort_enabled = true
+position = Vector2(224, 96)
+
+[node name="Crystal4" parent="Entities" instance=ExtResource("8_tqy7h")]
+y_sort_enabled = true
+position = Vector2(289, 96)
+
+[node name="Crystal6" parent="Entities" instance=ExtResource("8_tqy7h")]
+y_sort_enabled = true
+position = Vector2(225, 128)
+
+[node name="Crystal7" parent="Entities" instance=ExtResource("8_tqy7h")]
+y_sort_enabled = true
+position = Vector2(321, 160)
+
+[node name="Crystal8" parent="Entities" instance=ExtResource("8_tqy7h")]
+y_sort_enabled = true
+position = Vector2(64, 128)
+
+[node name="Crystal9" parent="Entities" instance=ExtResource("8_tqy7h")]
+y_sort_enabled = true
+position = Vector2(128, 192)
+
+[node name="Crystal10" parent="Entities" instance=ExtResource("8_tqy7h")]
+y_sort_enabled = true
+position = Vector2(64, 224)
+
+[node name="Crystal11" parent="Entities" instance=ExtResource("8_tqy7h")]
+y_sort_enabled = true
+position = Vector2(64, 320)
+
+[node name="Crystal12" parent="Entities" instance=ExtResource("8_tqy7h")]
+y_sort_enabled = true
+position = Vector2(64, 416)
+
+[node name="Crystal13" parent="Entities" instance=ExtResource("8_tqy7h")]
+y_sort_enabled = true
+position = Vector2(64, 448)
+
+[node name="Crystal14" parent="Entities" instance=ExtResource("8_tqy7h")]
+y_sort_enabled = true
+position = Vector2(96, 512)
+
+[node name="Crystal15" parent="Entities" instance=ExtResource("8_tqy7h")]
+y_sort_enabled = true
+position = Vector2(64, 576)
+
+[node name="Crystal16" parent="Entities" instance=ExtResource("8_tqy7h")]
+y_sort_enabled = true
+position = Vector2(96, 608)
+
+[node name="Crystal17" parent="Entities" instance=ExtResource("8_tqy7h")]
+y_sort_enabled = true
+position = Vector2(128, 640)
+
+[node name="Crystal18" parent="Entities" instance=ExtResource("8_tqy7h")]
+y_sort_enabled = true
+position = Vector2(192, 640)
+
+[node name="Crystal19" parent="Entities" instance=ExtResource("8_tqy7h")]
+y_sort_enabled = true
+position = Vector2(256, 640)
+
+[node name="Crystal20" parent="Entities" instance=ExtResource("8_tqy7h")]
+y_sort_enabled = true
+position = Vector2(320, 640)
+
+[node name="Crystal21" parent="Entities" instance=ExtResource("8_tqy7h")]
+y_sort_enabled = true
+position = Vector2(288, 576)
+
+[node name="Crystal22" parent="Entities" instance=ExtResource("8_tqy7h")]
+y_sort_enabled = true
+position = Vector2(224, 608)
+
+[node name="Crystal23" parent="Entities" instance=ExtResource("8_tqy7h")]
+y_sort_enabled = true
+position = Vector2(160, 576)
+
+[node name="Crystal24" parent="Entities" instance=ExtResource("8_tqy7h")]
+y_sort_enabled = true
+position = Vector2(160, 512)
+
+[node name="Crystal25" parent="Entities" instance=ExtResource("8_tqy7h")]
+y_sort_enabled = true
+position = Vector2(224, 544)
+
+[node name="Crystal26" parent="Entities" instance=ExtResource("8_tqy7h")]
+y_sort_enabled = true
+position = Vector2(224, 512)
+
+[node name="Crystal27" parent="Entities" instance=ExtResource("8_tqy7h")]
+y_sort_enabled = true
+position = Vector2(256, 480)
+
+[node name="Crystal28" parent="Entities" instance=ExtResource("8_tqy7h")]
+y_sort_enabled = true
+position = Vector2(192, 448)
+
+[node name="Crystal29" parent="Entities" instance=ExtResource("8_tqy7h")]
+y_sort_enabled = true
+position = Vector2(288, 448)
+
+[node name="Crystal30" parent="Entities" instance=ExtResource("8_tqy7h")]
+y_sort_enabled = true
+position = Vector2(320, 416)
+
+[node name="Crystal31" parent="Entities" instance=ExtResource("8_tqy7h")]
+y_sort_enabled = true
+position = Vector2(320, 352)
+
+[node name="Crystal32" parent="Entities" instance=ExtResource("8_tqy7h")]
+y_sort_enabled = true
+position = Vector2(288, 288)
+
+[node name="Crystal33" parent="Entities" instance=ExtResource("8_tqy7h")]
+y_sort_enabled = true
+position = Vector2(224, 256)
+
+[node name="Crystal34" parent="Entities" instance=ExtResource("8_tqy7h")]
+y_sort_enabled = true
+position = Vector2(256, 384)
+
+[node name="Crystal35" parent="Entities" instance=ExtResource("8_tqy7h")]
+y_sort_enabled = true
+position = Vector2(128, 416)
+
+[node name="Crystal36" parent="Entities" instance=ExtResource("8_tqy7h")]
+y_sort_enabled = true
+position = Vector2(96, 352)
+
+[node name="Crystal37" parent="Entities" instance=ExtResource("8_tqy7h")]
+y_sort_enabled = true
+position = Vector2(160, 288)
+
+[node name="Crystal38" parent="Entities" instance=ExtResource("8_tqy7h")]
+y_sort_enabled = true
+position = Vector2(96, 288)
+
+[node name="Crystal39" parent="Entities" instance=ExtResource("8_tqy7h")]
+y_sort_enabled = true
+position = Vector2(96, 288)
+
+[node name="Crystal40" parent="Entities" instance=ExtResource("8_tqy7h")]
+y_sort_enabled = true
+position = Vector2(160, 224)
+
+[node name="Crystal41" parent="Entities" instance=ExtResource("8_tqy7h")]
+y_sort_enabled = true
+position = Vector2(224, 192)
+
+[node name="Crystal42" parent="Entities" instance=ExtResource("8_tqy7h")]
+y_sort_enabled = true
+position = Vector2(160, 160)
+
+[node name="Crystal43" parent="Entities" instance=ExtResource("8_tqy7h")]
+y_sort_enabled = true
+position = Vector2(288, 224)
+
+[node name="Crystal44" parent="Entities" instance=ExtResource("8_tqy7h")]
+y_sort_enabled = true
+position = Vector2(256, 160)
+
+[node name="Crystal45" parent="Entities" instance=ExtResource("8_tqy7h")]
+y_sort_enabled = true
+position = Vector2(64, 160)
 
 [node name="MineRegion" type="Area2D" parent="."]
 

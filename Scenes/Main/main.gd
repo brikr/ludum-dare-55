@@ -5,13 +5,33 @@ extends Node
 func _ready():
   GameState.building_constructed.connect(_on_building_constructed)
   GameState.summon_count_changed.connect(_on_summon_count_changed)
-  pass # Replace with function body.
+
+  #spawn_crystals()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
   if Input.is_action_pressed("ui_cancel"):
     get_tree().quit()
+
+
+func spawn_crystals():
+  var rect = $MineRegion/CollisionShape2D.get_shape().get_rect()
+  var global_rect = Rect2($MineRegion/CollisionShape2D.global_position + rect.position, rect.size)
+
+  var top_left = global_rect.position
+  var bottom_right = global_rect.position + global_rect.size
+
+  for i in range(30):
+    var node = Preloaded.crystal.instantiate()
+
+    # pick a random spot in the rect
+    var x = randf_range(top_left.x, bottom_right.x)
+    var y = randf_range(top_left.y, bottom_right.y)
+
+    node.set_global_position(Vector2(x, y))
+
+    $Entities.add_child(node)
 
 
 func _on_summon_count_changed(creature: String, count: int):

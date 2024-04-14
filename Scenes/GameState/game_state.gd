@@ -64,6 +64,9 @@ func tick():
     arsenal["imp"] += disciple_count * mult
     arsenal["kobold"] += disciple_count * mult
     arsenal["hellhound"] += disciple_count * mult
+    summon_count_changed.emit("imp", arsenal["imp"])
+    summon_count_changed.emit("kobold", arsenal["kobold"])
+    summon_count_changed.emit("hellhound", arsenal["hellhound"])
 
 
 func summon(entity: String):
