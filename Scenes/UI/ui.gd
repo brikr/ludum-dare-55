@@ -54,7 +54,12 @@ func update_labels():
   else:
     $Resources/SummonCount.set("theme_override_colors/font_color", Color.WHITE)
 
-  $Resources/DemonPower.text = ATTACK_SIZE_STRING % ["Army power", GameState.get_demon_power()]
+  var current_power = GameState.get_demon_power()
+  $Resources/DemonPower.text = ATTACK_SIZE_STRING % ["Army power", current_power]
+  if current_power < Constants.ATTACK_SIZES[GameState.current_night - 1]:
+    $Resources/DemonPower.set("theme_override_colors/font_color", Color.RED)
+  else:
+    $Resources/DemonPower.set("theme_override_colors/font_color", Color.GREEN)
 
   $Info/NightCounter.text = NIGHT_STRING % GameState.current_night
   $Info/AttackSize.text = ATTACK_SIZE_STRING % ["Incoming attack size", Constants.ATTACK_SIZES[GameState.current_night - 1]]
@@ -62,6 +67,10 @@ func update_labels():
   var minutes := floori(GameState.time_until_day / 60)
   var seconds := floori(GameState.time_until_day % 60)
   $Info/NightTimer.text = TIMER_STRING % [minutes, seconds]
+  if GameState.time_until_day <= 30:
+    $Info/NightTimer.set("theme_override_colors/font_color", Color.RED)
+  else:
+    $Info/NightTimer.set("theme_override_colors/font_color", Color.WHITE)
 
 
 func update_button_texts():

@@ -12,7 +12,7 @@ signal night_ended
 var arsenal := Constants.STARTING_ARSENAL.duplicate()
 
 var current_night := 1
-var time_until_day := 180
+var time_until_day := 33
 var last_night_results := {
   "survived": true,
   "bonuses": []
