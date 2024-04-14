@@ -52,7 +52,7 @@ func update_labels():
   $Resources/DemonPower.text = ATTACK_SIZE_STRING % ["Demon Power", GameState.get_demon_power()]
 
   $Info/NightCounter.text = NIGHT_STRING % GameState.current_night
-  $Info/AttackSize.text = ATTACK_SIZE_STRING % ["Attack Size", Constants.ATTACK_SIZES[GameState.current_night]]
+  $Info/AttackSize.text = ATTACK_SIZE_STRING % ["Attack Size", Constants.ATTACK_SIZES[GameState.current_night - 1]]
 
   var minutes := floori(GameState.time_until_day / 60)
   var seconds := floori(GameState.time_until_day % 60)
