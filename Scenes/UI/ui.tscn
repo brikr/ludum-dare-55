@@ -68,19 +68,23 @@ custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 text = "Kobold"
 
+[node name="Spacer4" type="Control" parent="SummonButtons"]
+custom_minimum_size = Vector2(200, 62)
+layout_mode = 2
+
 [node name="Hellhound" type="Button" parent="SummonButtons"]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 text = "Hellhound"
 
-[node name="Spacer1" type="Control" parent="SummonButtons"]
-custom_minimum_size = Vector2(200, 36)
-layout_mode = 2
-
 [node name="Dwarf Soul" type="Button" parent="SummonButtons"]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 text = "Dwarf Soul"
+
+[node name="Spacer5" type="Control" parent="SummonButtons"]
+custom_minimum_size = Vector2(200, 62)
+layout_mode = 2
 
 [node name="Orc" type="Button" parent="SummonButtons"]
 custom_minimum_size = Vector2(200, 0)
@@ -92,8 +96,13 @@ custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 text = "Lesser Demon"
 
-[node name="Spacer2" type="Control" parent="SummonButtons"]
-custom_minimum_size = Vector2(200, 36)
+[node name="Abomination" type="Button" parent="SummonButtons"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "Abomination"
+
+[node name="Spacer6" type="Control" parent="SummonButtons"]
+custom_minimum_size = Vector2(200, 24)
 layout_mode = 2
 
 [node name="Apprentice" type="Button" parent="SummonButtons"]
@@ -101,10 +110,9 @@ custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 text = "Apprentice"
 
-[node name="Abomination" type="Button" parent="SummonButtons"]
-custom_minimum_size = Vector2(200, 0)
+[node name="Spacer2" type="Control" parent="SummonButtons"]
+custom_minimum_size = Vector2(200, 34)
 layout_mode = 2
-text = "Abomination"
 
 [node name="Black Knight" type="Button" parent="SummonButtons"]
 custom_minimum_size = Vector2(200, 0)
@@ -112,7 +120,7 @@ layout_mode = 2
 text = "Black Knight"
 
 [node name="Spacer3" type="Control" parent="SummonButtons"]
-custom_minimum_size = Vector2(200, 36)
+custom_minimum_size = Vector2(200, 62)
 layout_mode = 2
 
 [node name="Disciple" type="Button" parent="SummonButtons"]
@@ -142,7 +150,7 @@ layout_mode = 2
 text = "Rift Portal"
 
 [node name="Spacer3" type="Control" parent="BuildingButtons"]
-custom_minimum_size = Vector2(200, 20)
+custom_minimum_size = Vector2(200, 24)
 layout_mode = 2
 
 [node name="Shadow Well" type="Button" parent="BuildingButtons"]

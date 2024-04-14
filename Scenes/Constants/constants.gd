@@ -40,7 +40,6 @@ const SUMMON_COSTS := {
   },
   # Tier 4
   "apprentice": {
-    "mana": 500,
     "gems": 250,
   },
   "abomination": {
@@ -57,7 +56,6 @@ const SUMMON_COSTS := {
   },
   # Tier 5
   "disciple": {
-    "mana": 1000,
     "gems": 500,
     "apprentice": 1
   },
@@ -76,13 +74,13 @@ const SUMMON_COSTS := {
 
 const BUILDING_COSTS := {
   "rift portal": {
-    "gems": 1000
+    "gems": 500
   },
   "shadow well": {
     "gems": 500
   },
   "soul conduit": {
-    "gems": 1500
+    "gems": 1000
   },
   "dark library": {
     "gems": 2000

@@ -1,6 +1,6 @@
 extends CanvasLayer
 
-const RESOURCE_STRING := "%s: %d (%+d)"
+const RESOURCE_STRING := "%s: %s (+%s)"
 const SUPPLY_STRING := "Summons: %d/%d"
 const SUMMON_STRING := "%s (%d)"
 const BUILDING_STRING := "%s (%d/%d)"
@@ -40,8 +40,8 @@ func tick():
 
 
 func update_labels():
-  $Resources/Mana.text = RESOURCE_STRING % ["Mana", GameState.get_count("mana"), GameState.get_resource_rate("mana")]
-  $Resources/Gems.text = RESOURCE_STRING % ["Soul Gems", GameState.get_count("gems"), GameState.get_resource_rate("gems")]
+  $Resources/Mana.text = RESOURCE_STRING % ["Mana", format_number(GameState.get_count("mana")), format_number(GameState.get_resource_rate("mana"))]
+  $Resources/Gems.text = RESOURCE_STRING % ["Soul Gems", format_number(GameState.get_count("gems")), format_number(GameState.get_resource_rate("gems"))]
 
   $Resources/SummonCount.text = SUPPLY_STRING % [GameState.get_supply(), GameState.get_supply_cap()]
   if GameState.get_supply() == GameState.get_supply_cap():
@@ -70,11 +70,8 @@ func update_button_texts():
 func update_summonable_entities():
   for summon in Constants.SUMMON_COSTS:
     var button = get_node("SummonButtons/%s" % summon.capitalize())
-    if GameState.get_supply() == GameState.get_supply_cap():
-      button.set_disabled(true)
-    else:
-      var affordable := GameState.can_afford(summon)
-      button.set_disabled(!affordable)
+    var affordable := GameState.can_afford(summon)
+    button.set_disabled(!affordable)
 
   for building in Constants.BUILDING_COSTS:
     var button = get_node("BuildingButtons/%s" % building.capitalize())
@@ -134,6 +131,15 @@ func update_tooltip_text():
   )
 
   $Tooltip/TooltipContent.text = tooltip_text
+
+
+# number to string; if the number is >=10k, formats in k format
+func format_number(num: int) -> String:
+  if num < 10000:
+    return str(num)
+  else:
+    var k = float(num) / 1000
+    return "%.1fk" % k
 
 
 func _on_button_mouse_entered(entity: String):

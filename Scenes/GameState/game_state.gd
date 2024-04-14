@@ -60,10 +60,36 @@ func tick():
     var disciple_count = get_count("disciple")
     var mult = 1 + get_count("dark library")
 
-    arsenal["imp"] += apprentice_count * mult
-    arsenal["imp"] += disciple_count * mult
-    arsenal["kobold"] += disciple_count * mult
-    arsenal["hellhound"] += disciple_count * mult
+    var new_creatures := {
+      # order important here
+      "hellhound": disciple_count * mult,
+      "kobold": disciple_count * mult,
+      "imp": apprentice_count * mult + disciple_count * mult,
+    }
+
+    # Add as many as we can without going over supply cap
+    var cap = get_supply_cap()
+    var supply = get_supply()
+    var available = cap - supply
+    for creature in new_creatures:
+      if new_creatures[creature] <= available:
+        # fits
+        arsenal[creature] += new_creatures[creature]
+        new_creatures[creature] = 0
+        available -= new_creatures[creature]
+      else:
+        # doesn't fit, add as many as we can
+        arsenal[creature] += available
+        new_creatures[creature] -= available
+        available = 0
+        break
+
+    # refund mana/gems for any unsummonable creatures
+    for creature in new_creatures:
+      arsenal["mana"] += Constants.SUMMON_COSTS[creature]["mana"] * new_creatures[creature]
+      if Constants.SUMMON_COSTS[creature].has("gems"):
+        arsenal["gems"] += Constants.SUMMON_COSTS[creature]["gems"] * new_creatures[creature]
+
     summon_count_changed.emit("imp", arsenal["imp"])
     summon_count_changed.emit("kobold", arsenal["kobold"])
     summon_count_changed.emit("hellhound", arsenal["hellhound"])
@@ -144,9 +170,22 @@ func get_cost(entity: String) -> Dictionary:
 func can_afford(entity: String) -> bool:
   var cost = get_cost(entity)
 
+  var supply_delta := 0
+  if Constants.SUMMON_COSTS.has(entity):
+    # is a creature
+    supply_delta = 1
+
   for requirement in cost:
     if !arsenal.has(requirement) || arsenal[requirement] < cost[requirement]:
+      # can't afford cost
       return false
+    if Constants.SUMMON_COSTS.has(requirement):
+      # cost is a creature, lower supply delta
+      supply_delta -= cost[requirement]
+
+  # if supply delta would put us above cap, show as not affordable
+  if get_supply() + supply_delta > get_supply_cap():
+    return false
 
   return true
 
