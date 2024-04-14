@@ -9,8 +9,8 @@ signal summon_count_changed
 
 # Current resource/entity counts
 var arsenal := {
-  "mana": 0,
-  "gems": 0,
+  "mana": 1000000,
+  "gems": 1000000,
   # including these here so apprentice/disciple code doesn't have to default them to zero
   "imp": 0,
   "kobold": 0,
@@ -62,21 +62,22 @@ func tick():
 
     var new_creatures := {
       # order important here
-      "hellhound": disciple_count * mult,
-      "kobold": disciple_count * mult,
       "imp": apprentice_count * mult + disciple_count * mult,
+      "kobold": disciple_count * mult,
+      "hellhound": disciple_count * mult
     }
 
     # Add as many as we can without going over supply cap
     var cap = get_supply_cap()
     var supply = get_supply()
     var available = cap - supply
-    for creature in new_creatures:
+    for creature in ["hellhound", "kobold", "imp"]:
+      print("available", available, "creature", creature)
       if new_creatures[creature] <= available:
         # fits
         arsenal[creature] += new_creatures[creature]
-        new_creatures[creature] = 0
         available -= new_creatures[creature]
+        new_creatures[creature] = 0
       else:
         # doesn't fit, add as many as we can
         arsenal[creature] += available
@@ -113,6 +114,13 @@ func summon(entity: String):
   arsenal[entity] += 1
   summon_count_changed.emit(entity, arsenal[entity])
   print(arsenal)
+
+
+func sacrifice(creature: String):
+  if arsenal.has(creature) && arsenal[creature] > 0:
+    arsenal[creature] -= 1
+    if Constants.SUMMON_COSTS[creature].has("gems"):
+      arsenal["gems"] += floori(Constants.SUMMON_COSTS[creature]["gems"] / 2)
 
 
 # TODO: this is same as summon except for checking caps. could probably combine
