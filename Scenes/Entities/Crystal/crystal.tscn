@@ -11,24 +11,28 @@ script = ExtResource("1_i36e0")
 
 [node name="Sprite1" type="Sprite2D" parent="."]
 visible = false
+y_sort_enabled = true
 texture = ExtResource("1_nis68")
 centered = false
 offset = Vector2(-16, -32)
 
 [node name="Sprite2" type="Sprite2D" parent="."]
 visible = false
+y_sort_enabled = true
 texture = ExtResource("2_1se3d")
 centered = false
 offset = Vector2(-16, -32)
 
 [node name="Sprite3" type="Sprite2D" parent="."]
 visible = false
+y_sort_enabled = true
 texture = ExtResource("3_ha4rf")
 centered = false
 offset = Vector2(-16, -32)
 
 [node name="Sprite4" type="Sprite2D" parent="."]
 visible = false
+y_sort_enabled = true
 texture = ExtResource("4_twv6y")
 centered = false
 offset = Vector2(-16, -32)

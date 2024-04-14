@@ -9,8 +9,8 @@ signal summon_count_changed
 
 # Current resource/entity counts
 var arsenal := {
-  "mana": 0,
-  "gems": 0,
+  "mana": 1000000,
+  "gems": 100000,
   # including these here so apprentice/disciple code doesn't have to default them to zero
   "imp": 0,
   "kobold": 0,

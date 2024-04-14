@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://5r6pgoqxwpjf" path="res://Scenes/Components/CreatureComponent/creature_component.tscn" id="2_sja6n"]
 
 [node name="Orc" type="Sprite2D"]
+y_sort_enabled = true
 texture = ExtResource("1_bepf4")
 centered = false
 offset = Vector2(-32, -64)

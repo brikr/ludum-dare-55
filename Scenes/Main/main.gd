@@ -17,7 +17,7 @@ func _process(delta):
 func _on_summon_count_changed(creature: String, count: int):
   # Ensure every creature node up to count exists
   for idx in range(1, count + 1):
-    var node = get_node_or_null("Summons/%s%d" % [creature.capitalize(), idx])
+    var node = get_node_or_null("Entities/%s%d" % [creature.capitalize(), idx])
     if node == null:
       node = Preloaded.packed_creatures[creature].instantiate()
       node.set_name("%s%d" % [creature.capitalize(), idx])
@@ -26,7 +26,7 @@ func _on_summon_count_changed(creature: String, count: int):
       place_creature(creature, node)
 
   # Delete every creature node above count
-  for node in $Summons.get_children():
+  for node in $Entities.get_children():
     if node.name.begins_with(creature.capitalize()):
       if node.get_node("CreatureComponent").index > count:
         node.queue_free()
@@ -54,12 +54,12 @@ func place_creature(creature: String, node: Node2D):
 
   node.set_global_position(Vector2(x, y))
 
-  $Summons.add_child(node)
+  $Entities.add_child(node)
 
 
 func _on_building_constructed(building: String, count: int):
   var node_name = "%s%d" % [building.capitalize(), count]
-  get_node("Buildings/%s" % node_name).set_visible(true)
+  get_node("Entities/%s" % node_name).set_visible(true)
 
 
 func _on_tick_timer_timeout():
