@@ -20,6 +20,8 @@ var packed_creatures := {
   "balrog": balrog,
   "black knight": black_knight,
   "demon brute": demon_brute,
+  "disciple": disciple,
+  "dwarf soul": dwarf_soul,
   "hellhound": hellhound,
   "imp": imp,
   "kobold": kobold,
