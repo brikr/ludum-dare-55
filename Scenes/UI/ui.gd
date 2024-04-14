@@ -1,5 +1,7 @@
 extends CanvasLayer
 
+signal continue_button_pressed
+
 const RESOURCE_STRING := "%s: %s (+%s)"
 const SUPPLY_STRING := "Summons: %d/%d"
 const SUMMON_STRING := "%s (%d)"
@@ -9,6 +11,7 @@ const TIMER_STRING := "Time until night: %d:%02d"
 const ATTACK_SIZE_STRING := "%s: %d"
 
 var hovered_entity := "imp"
+var summary_shown := false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -133,6 +136,26 @@ func update_tooltip_text():
   $Tooltip/TooltipContent.text = tooltip_text
 
 
+func show_summary(results: Dictionary):
+  var key_suffix = "_survived" if results["survived"] else "_failed"
+
+  $Summary/SummaryHeader.text = Constants.NIGHT_SUMMARY_STRINGS["header" + key_suffix]
+
+  var bonus_lines := []
+  for bonus in results.bonuses:
+    var line = "[ul]%s[/ul]" % Constants.NIGHT_SUMMARY_STRINGS["bonus_" + bonus]
+    bonus_lines.append(line)
+  var bonuses = "\n".join(bonus_lines)
+  $Summary/SummaryBonuses.text = bonuses
+
+  $Summary/SummaryDesc.text = Constants.NIGHT_SUMMARY_STRINGS["desc" + key_suffix]
+
+  $Summary/SummaryButton.text = Constants.NIGHT_SUMMARY_STRINGS["button" + key_suffix]
+
+  $Summary.set_visible(true)
+  summary_shown = true
+
+
 # number to string; if the number is >=10k, formats in k format
 func format_number(num: int) -> String:
   if num < 10000:
@@ -155,9 +178,19 @@ func _on_button_mouse_exited(entity: String):
 
 
 func _on_summon_pressed(creature: String):
-  GameState.summon(creature)
+  if !summary_shown:
+    GameState.summon(creature)
 
 
 func _on_building_pressed(building: String):
-  GameState.construct_building(building)
+  if !summary_shown:
+    GameState.construct_building(building)
 
+
+func _on_summary_button_pressed():
+  if GameState.last_night_results["survived"]:
+    $Summary.set_visible(false)
+    summary_shown = false
+    continue_button_pressed.emit()
+  else:
+    get_tree().quit()

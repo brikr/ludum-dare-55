@@ -5,12 +5,13 @@ extends Node
 
 signal building_constructed
 signal summon_count_changed
+signal night_ended
 
 
 # Current resource/entity counts
 var arsenal := {
-  "mana": 1000000,
-  "gems": 1000000,
+  "mana": 0,
+  "gems": 0,
   # including these here so apprentice/disciple code doesn't have to default them to zero
   "imp": 0,
   "kobold": 0,
@@ -23,7 +24,11 @@ var arsenal := {
 }
 
 var current_night := 1
-var time_until_day := 180
+var time_until_day := 5
+var last_night_results := {
+  "survived": true,
+  "bonuses": ["apprentice", "black_knight", "gems"]
+}
 
 
 # Called when the node enters the scene tree for the first time.
@@ -95,6 +100,9 @@ func tick():
     summon_count_changed.emit("kobold", arsenal["kobold"])
     summon_count_changed.emit("hellhound", arsenal["hellhound"])
 
+  if time_until_day == 0:
+    end_night()
+
 
 func summon(entity: String):
   if !arsenal.has(entity):
@@ -145,6 +153,43 @@ func construct_building(building: String):
   arsenal[building] += 1
   building_constructed.emit(building, arsenal[building])
   print(arsenal)
+
+
+func apply_bonus(bonus: String):
+  match bonus:
+    "gems":
+      arsenal["gems"] += 500
+    "time":
+      time_until_day += 30
+    var creature:
+      print(creature)
+      if !arsenal.has(creature):
+        arsenal[creature] = 1
+      else:
+        arsenal[creature] += 1
+
+
+func end_night():
+  # reset timer
+  time_until_day = 180
+
+  # did we survive?
+  var survived = get_demon_power() >= Constants.ATTACK_SIZES[current_night - 1]
+
+  # roll bonuses
+  var bonuses := []
+  if survived:
+    for bonus in Constants.BONUS_PROBABILITY:
+      if randf() < Constants.BONUS_PROBABILITY[bonus]:
+        bonuses.append(bonus)
+        apply_bonus(bonus)
+
+  last_night_results = {
+    "survived": survived,
+    "bonuses": bonuses
+  }
+
+  night_ended.emit(last_night_results)
 
 
 func get_count(entity: String) -> int:

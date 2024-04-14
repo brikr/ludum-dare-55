@@ -3,8 +3,9 @@ extends Node
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-  GameState.building_constructed.connect(_on_building_constructed)
+  GameState.night_ended.connect(_on_night_ended)
   GameState.summon_count_changed.connect(_on_summon_count_changed)
+  GameState.building_constructed.connect(_on_building_constructed)
 
   #spawn_crystals()
 
@@ -34,24 +35,6 @@ func spawn_crystals():
     $Entities.add_child(node)
 
 
-func _on_summon_count_changed(creature: String, count: int):
-  # Ensure every creature node up to count exists
-  for idx in range(1, count + 1):
-    var node = get_node_or_null("Entities/%s%d" % [creature.capitalize(), idx])
-    if node == null:
-      node = Preloaded.packed_creatures[creature].instantiate()
-      node.set_name("%s%d" % [creature.capitalize(), idx])
-      # Special index field to make removal easier
-      node.get_node("CreatureComponent").index = idx
-      place_creature(creature, node)
-
-  # Delete every creature node above count
-  for node in $Entities.get_children():
-    if node.name.begins_with(creature.capitalize()):
-      if node.get_node("CreatureComponent").index > count:
-        node.queue_free()
-
-
 func place_creature(creature: String, node: Node2D):
   # get the region for the creature
   var collision_shape = get_node("%s/CollisionShape2D" % Constants.PLACEMENT_REGIONS[creature])
@@ -77,6 +60,29 @@ func place_creature(creature: String, node: Node2D):
   $Entities.add_child(node)
 
 
+func _on_night_ended(results: Dictionary):
+  $TickTimer.stop()
+  $UI.show_summary(results)
+
+
+func _on_summon_count_changed(creature: String, count: int):
+  # Ensure every creature node up to count exists
+  for idx in range(1, count + 1):
+    var node = get_node_or_null("Entities/%s%d" % [creature.capitalize(), idx])
+    if node == null:
+      node = Preloaded.packed_creatures[creature].instantiate()
+      node.set_name("%s%d" % [creature.capitalize(), idx])
+      # Special index field to make removal easier
+      node.get_node("CreatureComponent").index = idx
+      place_creature(creature, node)
+
+  # Delete every creature node above count
+  for node in $Entities.get_children():
+    if node.name.begins_with(creature.capitalize()):
+      if node.get_node("CreatureComponent").index > count:
+        node.queue_free()
+
+
 func _on_building_constructed(building: String, count: int):
   var node_name = "%s%d" % [building.capitalize(), count]
   get_node("Entities/%s" % node_name).set_visible(true)
@@ -85,3 +91,8 @@ func _on_building_constructed(building: String, count: int):
 func _on_tick_timer_timeout():
   GameState.tick()
   $UI.tick()
+
+
+func _on_ui_continue_button_pressed():
+  GameState.current_night += 1
+  $TickTimer.start()

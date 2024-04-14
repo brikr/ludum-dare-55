@@ -173,3 +173,25 @@ const ATTACK_SIZES = [
   500,
   1000
 ]
+
+const NIGHT_SUMMARY_STRINGS := {
+  "header_survived": "You defeated the attacking adventurers",
+  "header_failed": "The adventurers have defeated your dark army",
+  "desc_survived": "You should spend the next night preparing for another attack.",
+  "desc_failed": "Better luck next time!",
+  "button_survived": "Continue",
+  "button_failed": "Exit",
+  "bonus_gems": "Your army captures the adventurers' essence and convert them to 500 gems.",
+  "bonus_dwarf soul": "A dwarven adventurer's soul was intercepted on its way to the afterlife and has been put to work in the mines.",
+  "bonus_black knight": "A strong warrior among the adventuring party succumbed to your magic and has joined the army as a Black Knight.",
+  "bonus_apprentice": "An adventurer has seen the power of your army and decided to join you as an Apprentice.",
+  "bonus_time": "The dark forces shift cosmic entities in your favor. The next night will last longer."
+}
+
+const BONUS_PROBABILITY := {
+  "gems": 0.5,
+  "dwarf soul": 0.3,
+  "time": 0.3,
+  "apprentice": 0.2,
+  "black knight": 0.1
+}

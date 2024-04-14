@@ -433,4 +433,5 @@ shape = SubResource("RectangleShape2D_bhdni")
 position = Vector2(768, 384)
 shape = SubResource("RectangleShape2D_r36x8")
 
+[connection signal="continue_button_pressed" from="UI" to="." method="_on_ui_continue_button_pressed"]
 [connection signal="timeout" from="TickTimer" to="." method="_on_tick_timer_timeout"]
