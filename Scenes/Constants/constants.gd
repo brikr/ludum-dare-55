@@ -6,8 +6,8 @@ const BASE_MANA_REGEN := 5
 
 const STARTING_ARSENAL := {
   # TODO: remember to set these to zero before submission
-  "mana": 1000000,
-  "gems": 1000000,
+  "mana": 0,
+  "gems": 0,
   # including these here so apprentice/disciple code doesn't have to default them to zero
   "imp": 0,
   "kobold": 0,
@@ -56,7 +56,7 @@ const SUMMON_COSTS := {
   },
   # Tier 4
   "apprentice": {
-    "gems": 250,
+    "gems": 500,
   },
   "abomination": {
     "mana": 250,
@@ -72,7 +72,7 @@ const SUMMON_COSTS := {
   },
   # Tier 5
   "disciple": {
-    "gems": 500,
+    "gems": 250,
     "apprentice": 1
   },
   "pit lord": {
@@ -96,7 +96,7 @@ const BUILDING_COSTS := {
     "gems": 500
   },
   "soul conduit": {
-    "gems": 250
+    "gems": 500
   },
   "dark library": {
     "gems": 2000
@@ -125,7 +125,7 @@ const TOOLTIP_DESCRIPTIONS := {
   "balrog": "An ancient and powerful demon of fire and shadow. The strongest demon among the infernal ranks.",
   "rift portal": "+10 Summon limit\n\nOpens another channel into the void, allowing you to summon more creatures into this world.",
   "shadow well": "A pool of darkness swirling with malevolent energy, allowing you access to faster mana regeneration.",
-  "soul conduit": "-10% Soul Gem costs\n\nA literal highway to hell. With direct access to the pool of souls in the underworld, all of your soul gem costs are reduced. This effect stacks.",
+  "soul conduit": "-5% Soul Gem costs\n\nA literal highway to hell. With direct access to the pool of souls in the underworld, all of your soul gem costs are reduced. This effect stacks.",
   "dark library": "2x summons from Apprentices and Diciples\n\nA repository of forbidden knowledge and untold power."
 }
 
@@ -157,13 +157,13 @@ const BASE_DEMON_POWER := {
   "hellhound": 5,
   "dwarf soul": 2,
   "orc": 7,
-  "demon brute": 10,
+  "demon brute": 12,
   "apprentice": 1,
   "abomination": 5,
-  "black knight": 20,
+  "black knight": 30,
   "disciple": 3,
   "pit lord": 10,
-  "balrog": 100
+  "balrog": 150
 }
 
 # Which region each creature type should be placed in
@@ -185,7 +185,7 @@ const PLACEMENT_REGIONS := {
 # Attack size at the end of each night
 const ATTACK_SIZES = [
   20,
-  100,
+  120,
   500,
   1000
 ]

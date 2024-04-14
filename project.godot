@@ -30,7 +30,6 @@ GameState="*res://Scenes/GameState/game_state.tscn"
 window/size/viewport_width=1600
 window/size/viewport_height=900
 window/stretch/mode="viewport"
-window/stretch/scale_mode="integer"
 
 [editor_plugins]
 

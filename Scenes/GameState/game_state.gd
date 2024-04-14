@@ -204,7 +204,7 @@ func get_cost(entity: String) -> Dictionary:
 
   # Soul conduit reductions
   var soul_conduit_count = get_count("soul conduit")
-  var soul_conduit_reduction = 0.1 * soul_conduit_count
+  var soul_conduit_reduction = 0.05 * soul_conduit_count
   var soul_conduit_mult = 1 - soul_conduit_reduction
 
   if cost.has("gems"):
