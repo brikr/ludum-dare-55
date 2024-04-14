@@ -104,7 +104,7 @@ const TOOLTIP_DESCRIPTIONS := {
   "apprentice": "An apprentice summoner that's relatively new to the dark arts. Using their own mana pool, they will summon an Imp every 10 seconds.",
   "abomination": "A disgusting amalgamation of muscle and bone. It lacks the intelligence and versatility to excel in combat, but its pure strength makes it an excellence miner.",
   "black knight": "A fallen champion in plate armor. One of the best warriors in history, now under control by dark magic.",
-  "disciple": "Spend some resources training an apprentice. Once they are a disciple, they will summon Imps, Hellhounds, and Kobolds.",
+  "disciple": "Spend some resources training an apprentice. Once they are a disciple, they will summon Hellhounds instead of Imps.",
   "pit lord": "+1 Power to all summons\n\nA commander of the infernal legions. Its prowess in warfare increases the demon power of every summon in your army.",
   "balrog": "An ancient and powerful demon of fire and shadow. The strongest demon among the infernal ranks.",
   "rift portal": "+10 Summon limit\n\nOpens another channel into the void, allowing you to summon more creatures into this world.",

@@ -1,7 +1,7 @@
-ea4bc82a6ad023ab7ee23ee620429895
-::res://::1713049633
+cffcf7cc5eb03ca20a5c49cce30ef619
+::res://::1713117199
 icon.svg::CompressedTexture2D::8329556524690112368::1712969251::1712969256::1::::<><>::
-theme.tres::Theme::1916527892957159508::1713034010::0::1::::<><>::
+theme.tres::Theme::1916527892957159508::1713068997::0::1::::<><>::
 ::res://addons/::1713049563
 ::res://addons/nklbdev.aseprite_importers/::1713049564
 aseprite_image_format_loader_extension.gd::GDScript::-1::1713049563::0::1::::<>ImageFormatLoaderExtension<>::
@@ -18,7 +18,7 @@ sprite_frames.gd::GDScript::-1::1713049564::0::1::::<><>::
 texture_rect.gd::GDScript::-1::1713049564::0::1::::<><>::
 _animation_importer_base.gd::GDScript::-1::1713049563::0::1::::<><>::
 _importer_base.gd::GDScript::-1::1713049563::0::1::::<>EditorImportPlugin<>::
-::res://Assets/::1713049644
+::res://Assets/::1713049677
 abomination.aseprite::CompressedTexture2D::3399426337757981849::1713039179::1713049644::1::::<><>::
 apprentice.aseprite::CompressedTexture2D::7793009966665653431::1713038087::1713049644::1::::<><>::
 background.aseprite::CompressedTexture2D::9087935050093396122::1713049676::1713049677::1::::<><>::
@@ -40,16 +40,51 @@ pit lord.aseprite::CompressedTexture2D::3483338417160430664::1713039983::1713049
 rift portal.aseprite::CompressedTexture2D::1007771175863756941::1713040670::1713049644::1::::<><>::
 shadow well.aseprite::CompressedTexture2D::6138389327227043667::1713040812::1713049644::1::::<><>::
 soul conduit.aseprite::CompressedTexture2D::5796214732834978745::1713041320::1713049644::1::::<><>::
-::res://Scenes/::1712980684
-::res://Scenes/Constants/::1713045342
-constants.gd::GDScript::-1::1713043922::0::1::::<>Object<>::
-constants.tscn::PackedScene::7379891290153160250::1713045342::0::1::::<><>::res://Scenes/Constants/constants.gd
-::res://Scenes/GameState/::1713045342
-game_state.gd::GDScript::-1::1713042873::0::1::::<>Node<>::
-game_state.tscn::PackedScene::2763045286449941203::1713045342::0::1::::<><>::res://Scenes/GameState/game_state.gd
-::res://Scenes/Main/::1713045342
-main.gd::GDScript::-1::1712995187::0::1::::<>Node<>::
-main.tscn::PackedScene::2868992512765475781::1713045342::0::1::::<><>::res://Scenes/Main/main.gd<>uid://cisb4l6jm1y01::::res://Scenes/UI/ui.tscn
-::res://Scenes/UI/::1713045420
-ui.gd::GDScript::-1::1713043773::0::1::::<>CanvasLayer<>::
-ui.tscn::PackedScene::5371624047151339452::1713045420::0::1::::<><>::res://Scenes/UI/ui.gd
+::res://Scenes/::1713054553
+::res://Scenes/Components/::1713054557
+::res://Scenes/Components/CreatureComponent/::1713080786
+creature_component.gd::GDScript::-1::1713077975::0::1::::<>Node<>::
+creature_component.tscn::PackedScene::2142669082170269075::1713080786::0::1::::<><>::res://Scenes/Components/CreatureComponent/creature_component.gd
+::res://Scenes/Constants/::1713080786
+constants.gd::GDScript::-1::1713078142::0::1::::<>Object<>::
+constants.tscn::PackedScene::7379891290153160250::1713080786::0::1::::<><>::res://Scenes/Constants/constants.gd
+::res://Scenes/Entities/::1713054481
+::res://Scenes/Entities/Abomination/::1713058816
+abomination.tscn::PackedScene::5060964344464534350::1713058816::0::1::::<><>::uid://booyb4ypp650h::::res://Assets/abomination.aseprite<>uid://5r6pgoqxwpjf::::res://Scenes/Components/CreatureComponent/creature_component.tscn
+::res://Scenes/Entities/Apprentice/::1713058816
+apprentice.tscn::PackedScene::8983011176153778759::1713058816::0::1::::<><>::uid://dja80alflkvln::::res://Assets/apprentice.aseprite<>uid://5r6pgoqxwpjf::::res://Scenes/Components/CreatureComponent/creature_component.tscn
+::res://Scenes/Entities/Balrog/::1713058816
+balrog.tscn::PackedScene::8239606504696013133::1713058816::0::1::::<><>::uid://bi2al54pk4qx4::::res://Assets/balrog.aseprite<>uid://5r6pgoqxwpjf::::res://Scenes/Components/CreatureComponent/creature_component.tscn
+::res://Scenes/Entities/BlackKnight/::1713058816
+black_knight.tscn::PackedScene::3360566867465771720::1713058816::0::1::::<><>::uid://l4llw2qeone5::::res://Assets/black knight.aseprite<>uid://5r6pgoqxwpjf::::res://Scenes/Components/CreatureComponent/creature_component.tscn
+::res://Scenes/Entities/Crystal/::1713058816
+crystal.gd::GDScript::-1::1713051776::0::1::::<>Node2D<>::
+crystal.tscn::PackedScene::8638990230281534298::1713058816::0::1::::<><>::res://Scenes/Entities/Crystal/crystal.gd<>uid://bu6l64cekgltg::::res://Assets/crystal1.aseprite<>uid://dflevg424y42c::::res://Assets/crystal2.aseprite<>uid://c1u25qdwxsalm::::res://Assets/crystal3.aseprite<>uid://dc81opas6gu7v::::res://Assets/crystal4.aseprite
+::res://Scenes/Entities/DemonBrute/::1713058816
+demon_brute.tscn::PackedScene::3994734149614848907::1713058816::0::1::::<><>::uid://m2ickemyubb8::::res://Assets/demon brute.aseprite<>uid://5r6pgoqxwpjf::::res://Scenes/Components/CreatureComponent/creature_component.tscn
+::res://Scenes/Entities/Disciple/::1713058816
+disciple.tscn::PackedScene::424577913727748420::1713058816::0::1::::<><>::uid://hlwupjnl8e62::::res://Assets/disciple.aseprite<>uid://5r6pgoqxwpjf::::res://Scenes/Components/CreatureComponent/creature_component.tscn
+::res://Scenes/Entities/DwarfSoul/::1713058816
+dwarf_soul.tscn::PackedScene::3727739795910072758::1713058816::0::1::::<><>::uid://cueo0rf5g16db::::res://Assets/dwarf soul.aseprite<>uid://5r6pgoqxwpjf::::res://Scenes/Components/CreatureComponent/creature_component.tscn
+::res://Scenes/Entities/Hellhound/::1713058816
+hellhound.tscn::PackedScene::6407874770182278683::1713058816::0::1::::<><>::uid://birj7ybmfoloq::::res://Assets/hellhound.aseprite<>uid://5r6pgoqxwpjf::::res://Scenes/Components/CreatureComponent/creature_component.tscn
+::res://Scenes/Entities/Imp/::1713058816
+imp.tscn::PackedScene::593413489804352758::1713058816::0::1::::<><>::uid://b6fiabnmm4edf::::res://Assets/imp.aseprite<>uid://5r6pgoqxwpjf::::res://Scenes/Components/CreatureComponent/creature_component.tscn
+::res://Scenes/Entities/Kobold/::1713058816
+kobold.tscn::PackedScene::4865896513403679181::1713058816::0::1::::<><>::uid://tk4uqkigbitn::::res://Assets/kobold.aseprite<>uid://5r6pgoqxwpjf::::res://Scenes/Components/CreatureComponent/creature_component.tscn
+::res://Scenes/Entities/Orc/::1713058816
+orc.tscn::PackedScene::7610140643115499294::1713058816::0::1::::<><>::uid://ci756lnfdwd0b::::res://Assets/orc.aseprite<>uid://5r6pgoqxwpjf::::res://Scenes/Components/CreatureComponent/creature_component.tscn
+::res://Scenes/Entities/PitLord/::1713058816
+pit_lord.tscn::PackedScene::8047413489551218160::1713058816::0::1::::<><>::uid://bpvmcsqjk3v33::::res://Assets/pit lord.aseprite<>uid://5r6pgoqxwpjf::::res://Scenes/Components/CreatureComponent/creature_component.tscn
+::res://Scenes/GameState/::1713080813
+game_state.gd::GDScript::-1::1713080813::0::1::::<>Node<>::
+game_state.tscn::PackedScene::2763045286449941203::1713054764::0::1::::<><>::res://Scenes/GameState/game_state.gd
+::res://Scenes/Main/::1713080785
+main.gd::GDScript::-1::1713079961::0::1::::<>Node<>::
+main.tscn::PackedScene::2868992512765475781::1713080785::0::1::::<><>::res://Scenes/Main/main.gd<>uid://cisb4l6jm1y01::::res://Scenes/UI/ui.tscn<>uid://d2qi7ywsin4li::::res://Assets/background.aseprite<>uid://omf3xxyxrg3f::::res://Assets/rift portal.aseprite<>uid://ctpqm07ksh0gl::::res://Assets/shadow well.aseprite<>uid://coty2se4hv3pt::::res://Assets/soul conduit.aseprite<>uid://dpgqoica0c1ox::::res://Assets/dark library.aseprite<>uid://dvc153nuqaete::::res://Scenes/Entities/Crystal/crystal.tscn
+::res://Scenes/Preloaded/::1713056595
+preloaded.gd::GDScript::-1::1713056595::0::1::::<>Object<>::
+preloaded.tscn::PackedScene::3954426269843022431::1713054764::0::1::::<><>::res://Scenes/Preloaded/preloaded.gd
+::res://Scenes/UI/::1713080813
+ui.gd::GDScript::-1::1713080097::0::1::::<>CanvasLayer<>::
+ui.tscn::PackedScene::5371624047151339452::1713080813::0::1::::<><>::res://Scenes/UI/ui.gd
