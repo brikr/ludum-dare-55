@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Scenes/Main/main.gd" id="1_kfhol"]
 [ext_resource type="PackedScene" uid="uid://cisb4l6jm1y01" path="res://Scenes/UI/ui.tscn" id="2_0ajhu"]
 [ext_resource type="Texture2D" uid="uid://d2qi7ywsin4li" path="res://Assets/background.aseprite" id="3_kqb6q"]
-[ext_resource type="Texture2D" uid="uid://omf3xxyxrg3f" path="res://Assets/rift portal.aseprite" id="4_tbauk"]
+[ext_resource type="PackedScene" uid="uid://bn7t8ra061qee" path="res://Scenes/Entities/RiftPortal/rift_portal.tscn" id="4_hh608"]
 [ext_resource type="Texture2D" uid="uid://ctpqm07ksh0gl" path="res://Assets/shadow well.aseprite" id="5_l27q6"]
 [ext_resource type="Texture2D" uid="uid://coty2se4hv3pt" path="res://Assets/soul conduit.aseprite" id="6_bblj0"]
 [ext_resource type="Texture2D" uid="uid://dpgqoica0c1ox" path="res://Assets/dark library.aseprite" id="7_nkwg7"]
@@ -34,84 +34,44 @@ centered = false
 [node name="Entities" type="Node2D" parent="."]
 y_sort_enabled = true
 
-[node name="Rift Portal1" type="Sprite2D" parent="Entities"]
-y_sort_enabled = true
+[node name="Rift Portal1" parent="Entities" instance=ExtResource("4_hh608")]
 position = Vector2(160, 128)
-texture = ExtResource("4_tbauk")
-centered = false
-offset = Vector2(-32, -128)
 
-[node name="Rift Portal2" type="Sprite2D" parent="Entities"]
+[node name="Rift Portal2" parent="Entities" instance=ExtResource("4_hh608")]
 visible = false
-y_sort_enabled = true
 position = Vector2(608, 640)
-texture = ExtResource("4_tbauk")
-centered = false
-offset = Vector2(-32, -128)
 
-[node name="Rift Portal3" type="Sprite2D" parent="Entities"]
+[node name="Rift Portal3" parent="Entities" instance=ExtResource("4_hh608")]
 visible = false
-y_sort_enabled = true
 position = Vector2(864, 640)
-texture = ExtResource("4_tbauk")
-centered = false
-offset = Vector2(-32, -128)
 
-[node name="Rift Portal4" type="Sprite2D" parent="Entities"]
+[node name="Rift Portal4" parent="Entities" instance=ExtResource("4_hh608")]
 visible = false
-y_sort_enabled = true
 position = Vector2(1248, 128)
-texture = ExtResource("4_tbauk")
-centered = false
-offset = Vector2(-32, -128)
 
-[node name="Rift Portal5" type="Sprite2D" parent="Entities"]
+[node name="Rift Portal5" parent="Entities" instance=ExtResource("4_hh608")]
 visible = false
-y_sort_enabled = true
 position = Vector2(544, 128)
-texture = ExtResource("4_tbauk")
-centered = false
-offset = Vector2(-32, -128)
 
-[node name="Rift Portal6" type="Sprite2D" parent="Entities"]
+[node name="Rift Portal6" parent="Entities" instance=ExtResource("4_hh608")]
 visible = false
-y_sort_enabled = true
 position = Vector2(640, 128)
-texture = ExtResource("4_tbauk")
-centered = false
-offset = Vector2(-32, -128)
 
-[node name="Rift Portal7" type="Sprite2D" parent="Entities"]
+[node name="Rift Portal7" parent="Entities" instance=ExtResource("4_hh608")]
 visible = false
-y_sort_enabled = true
 position = Vector2(1344, 128)
-texture = ExtResource("4_tbauk")
-centered = false
-offset = Vector2(-32, -128)
 
-[node name="Rift Portal8" type="Sprite2D" parent="Entities"]
+[node name="Rift Portal8" parent="Entities" instance=ExtResource("4_hh608")]
 visible = false
-y_sort_enabled = true
 position = Vector2(512, 640)
-texture = ExtResource("4_tbauk")
-centered = false
-offset = Vector2(-32, -128)
 
-[node name="Rift Portal9" type="Sprite2D" parent="Entities"]
+[node name="Rift Portal9" parent="Entities" instance=ExtResource("4_hh608")]
 visible = false
-y_sort_enabled = true
 position = Vector2(960, 640)
-texture = ExtResource("4_tbauk")
-centered = false
-offset = Vector2(-32, -128)
 
-[node name="Rift Portal10" type="Sprite2D" parent="Entities"]
+[node name="Rift Portal10" parent="Entities" instance=ExtResource("4_hh608")]
 visible = false
-y_sort_enabled = true
 position = Vector2(256, 128)
-texture = ExtResource("4_tbauk")
-centered = false
-offset = Vector2(-32, -128)
 
 [node name="Shadow Well1" type="Sprite2D" parent="Entities"]
 visible = false

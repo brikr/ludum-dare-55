@@ -6,6 +6,7 @@ func _ready():
   GameState.night_ended.connect(_on_night_ended)
   GameState.summon_count_changed.connect(_on_summon_count_changed)
   GameState.building_constructed.connect(_on_building_constructed)
+  get_node("Entities/Rift Portal1").spawn()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -97,7 +98,10 @@ func _on_summon_count_changed(creature: String, count: int):
 
 func _on_building_constructed(building: String, count: int):
   var node_name = "%s%d" % [building.capitalize(), count]
-  get_node("Entities/%s" % node_name).set_visible(true)
+  var node = get_node("Entities/%s" % node_name)
+  node.set_visible(true)
+  if node.has_method("spawn"):
+    node.spawn()
 
 
 func _on_tick_timer_timeout():

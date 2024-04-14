@@ -1,3 +1,4 @@
+Sprite2D
 AudioStreamPlayer
 AudioStreamPlayer2D
 RichTextLabel
@@ -8,7 +9,6 @@ Node2D
 Node
 CollisionShape2D
 Area2D
-Sprite2D
 PanelContainer
 VFlowContainer
 Control

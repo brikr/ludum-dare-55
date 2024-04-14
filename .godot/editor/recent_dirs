@@ -1,3 +1,4 @@
+res://Scenes/Entities/RiftPortal
 C:/Users/elkem/Documents/Godot/ludum-dare-55/build
 res://Scenes/Components/CreatureComponent
 res://Scenes/Preloaded
@@ -19,5 +20,3 @@ C:/Program Files/Aseprite
 res://Scenes/UI
 res://Scenes/Constants
 res://
-res://Scenes/GameState
-res://Scenes/Main

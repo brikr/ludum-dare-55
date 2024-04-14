@@ -5,3 +5,6 @@ res://Scenes/GameState/game_state.gd
 res://Scenes/UI/ui.tscn
 res://Scenes/Constants/constants.tscn
 res://Scenes/Components/CreatureComponent/creature_component.tscn
+res://Scenes/Entities/RiftPortal/rift_portal.tscn
+res://Scenes/Entities/RiftPortal/rift_portal.gd
+res://Scenes/Main/main.gd
