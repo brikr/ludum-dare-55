@@ -137,6 +137,11 @@ func update_tooltip_text():
   $Tooltip/TooltipContent.text = tooltip_text
 
 
+func show_win_screen():
+  $Win.set_visible(true)
+  summoning_allowed = false
+
+
 func show_summary(results: Dictionary):
   var key_suffix = "_survived" if results["survived"] else "_failed"
 
@@ -204,3 +209,7 @@ func _on_start_button_pressed():
   $Intro.set_visible(false)
   start_button_pressed.emit()
   summoning_allowed = true
+
+
+func _on_quit_button_pressed():
+  get_tree().quit()

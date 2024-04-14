@@ -63,7 +63,10 @@ func place_creature(creature: String, node: Node2D):
 
 func _on_night_ended(results: Dictionary):
   $TickTimer.stop()
-  $UI.show_summary(results)
+  if results.won:
+    $UI.show_win_screen()
+  else:
+    $UI.show_summary(results)
 
 
 func _on_summon_count_changed(creature: String, count: int):

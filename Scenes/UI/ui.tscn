@@ -323,5 +323,5 @@ offset_bottom = 476.0
 text = "Continue"
 
 [connection signal="pressed" from="Intro/StartButton" to="." method="_on_start_button_pressed"]
-[connection signal="pressed" from="Win/QuitButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="Win/QuitButton" to="." method="_on_quit_button_pressed"]
 [connection signal="pressed" from="Summary/SummaryButton" to="." method="_on_summary_button_pressed"]

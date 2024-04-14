@@ -180,8 +180,12 @@ func end_night():
         bonuses.append(bonus)
         apply_bonus(bonus)
 
+  # did we win the game?
+  var won := bool(survived && current_night == Constants.ATTACK_SIZES.size())
+
   last_night_results = {
     "survived": survived,
+    "won": won,
     "bonuses": bonuses
   }
 
