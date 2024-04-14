@@ -28,7 +28,6 @@ centered = false
 [node name="UI" parent="." instance=ExtResource("2_0ajhu")]
 
 [node name="TickTimer" type="Timer" parent="."]
-wait_time = 0.5
 autostart = true
 
 [node name="Entities" type="Node2D" parent="."]

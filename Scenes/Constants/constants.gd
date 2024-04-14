@@ -147,7 +147,7 @@ const BASE_DEMON_POWER := {
   "black knight": 20,
   "disciple": 3,
   "pit lord": 10,
-  "balrog": 150
+  "balrog": 100
 }
 
 # Which region each creature type should be placed in
